@@ -288,7 +288,7 @@ In OpenCore Configurator go to `Kernel` -> `Patch` and add the following [patch]
 | ------------------------- | -------------- | -------- | -------- | ----- | ------- |
 | com.apple.driver.AppleRTC | F1 error patch | 75330FB7 | EB330FB7 | 1     | &#9745; |
 
-If the error still appears on cold-boots (after power-off), go to `Kernel` -> `Quirks` in OpenCore Configurator and enable `DisableRtcChecksum` Quirk ([Fixing RTC write issues](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region)).
+If the error still appears on cold-boots (after power-off), add `RTCMemoryFixup` to your kexts ([Fixing RTC write issues](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html)).
 
 **Bluetooth / Wake**
 
@@ -313,7 +313,8 @@ sudo pmset tcpkeepalive 0
 | Sensors      | VirtualSMC.kext <br> SMCSuperIO.kext <br>  SMCProcessor.kext | 1.2.7   | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                               |
 | Audio        | VodooHDA.kext                                                | 2.9.7   | [sourceforge.net](https://sourceforge.net/projects/voodoohda/)                                                    |
 | Ethernet     | IntelMausi.kext                                              | 1.0.7   | [Mieze/LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)                                         |
-| NVMe         | NVMeFix.kext                                                 | 1.0.9   | [acidanthera/NVMeFix](https://github.com/acidanthera/NVMeFix)                                                     |
+| NVMe SSD     | NVMeFix.kext                                                 | 1.0.9   | [acidanthera/NVMeFix](https://github.com/acidanthera/NVMeFix)                                                     |
+| CMOS Memory  | RTCMemoryFixup.kext                                          | 1.0.7   | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)                                       |
 | CPU Temp     | XHCI-unsupported.kext                                        | 0.9.2   | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext) |
 | (USB Map     | USBInjectAll.kext                                            | 0.7.6   | [Sniki/OS-X-USB-Inject-All](https://github.com/Sniki/OS-X-USB-Inject-All))                                        |
 
