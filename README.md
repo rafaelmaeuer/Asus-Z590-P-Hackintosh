@@ -1,6 +1,6 @@
 ## ASUS PRIME Z590-P Hackintosh
 
-Guide about installing macOS Monterey on ASUS PRIME Z590-P Gaming (WiFi) Mainboard with 11th Gen Intel CPU.
+Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel CPU.
 
 ![PRIME Z590-P Gaming](Images/asus-z590-p.jpg)
 
@@ -19,17 +19,17 @@ Guide about installing macOS Monterey on ASUS PRIME Z590-P Gaming (WiFi) Mainboa
     - [Hardware](#hardware)
   - [Install macOS](#install-macos)
     - [1. Create OpenCore Drive](#1-create-opencore-drive)
-    - [2. Create macOS Installer Drive](#2-create-macos-installer-drive)
+    - [2. Create macOS Installer](#2-create-macos-installer)
     - [3. Install macOS](#3-install-macos)
     - [4. Post Installation](#4-post-installation)
   - [Update macOS](#update-macos)
-  - [OpenCore Config](#opencore-config)
-  - [Troubleshooting](#troubleshooting)
   - [Resources](#resources)
+    - [OpenCore Config](#opencore-config)
     - [ACPI Patches](#acpi-patches)
     - [Advanced Config](#advanced-config)
     - [Kexts in use](#kexts-in-use)
     - [Tools](#tools)
+  - [Troubleshooting](#troubleshooting)
   - [Contribution](#contribution)
     - [Links and Documentation](#links-and-documentation)
 
@@ -69,7 +69,6 @@ Guide about installing macOS Monterey on ASUS PRIME Z590-P Gaming (WiFi) Mainboa
         - Clear Secure Boot Keys: Execute
     - Boot Configuration
       - Fast Boot: Disabled
-      - Wait For 'F1' If Error: ???
   ```
 
 #### Hardware
@@ -126,7 +125,7 @@ Guide about installing macOS Monterey on ASUS PRIME Z590-P Gaming (WiFi) Mainboa
 
 ---
 
-#### 2. Create macOS Installer Drive
+#### 2. Create macOS Installer
 
 To create a working macOS Installer boot drive, you will need the following:
 
@@ -180,79 +179,7 @@ To create a working macOS Installer boot drive, you will need the following:
 
 **c) Drivers/Kexts**
 
-- Install VoodooHDA (by [yahgoo/installVoodooHDA4BSnMont](https://github.com/yahgoo/installVoodooHDA4BSnMont))
-  1. In OpenCore Configurator go to `NVRAM` -> `csr-active-config` and set
-
-      | Key*              | Value      | Type |
-      | ----------------- | ---------- | ---- |
-      | csr-active-config | `EF0F0000` | DATA |
-
-  2. Boot into recovery mode, open up terminal, disable SIP with `csrutil` and `authenticated-root`, reboot afterwards
-
-      ```sh
-      csrutil disable
-      csrutil authenticated-root disable
-      reboot
-      ```
-
-      Check `SIP` status after reboot (should both be `disabled`)
-
-      ```sh
-      csrutil status
-      csrutil authenticated-root status
-      ```
-
-  3. Check volume label for `Montery` drive (might be `disk1s5`)
-
-      ```sh
-      diskutil list
-      ```
-
-      Mount System-Snapshot of `Montery` volume by label
-
-      ```sh
-      sudo diskutil mountdisk disk1s5
-      ```
-
-  4. Disable `GateKeeper` and verify status (should be `disabled`)
-
-      ```sh
-      sudo spctl --master-disable
-      spctl --status
-      ```
-
-  5. Copy `VoodooHDA.kext` to `L/E`
-
-      ```sh
-      sudo cp -R /VoodooHDA.kext /Library/Extensions
-      ```
-
-  6. Wait for prompt `System Extension Updated` and accept it. Open System Preferences and allow kext modification, **don't reboot**.
-  7. Open `Hackintool` -> `Utilities` -> `Install Kext(s)` and select `VoodooHDA.kext`.
-  8. Reboot and check if audio device is working as expected.
-  9. Revert all changes (but `csr-active-config`):
-
-        - Re-Enable `GateKeeper` and verify status (should be `enabled`)
-
-          ```sh
-          sudo spctl --master-enable
-          spctl --status
-          ```
-
-        - Re-Enable `SIP` after booting in recovery mode
-
-          ```sh
-          csrutil authenticated-root enable
-          csrutil enable
-          reboot
-          ```
-
-          Check `SIP` status after reboot (should both be `enabled`)
-
-          ```sh
-          csrutil status
-          csrutil authenticated-root status
-          ```
+- Install VoodooHDA by following instructions in [Docs/AUDIO.md](Docs/AUDIO.md).
 
 ---
 
@@ -277,19 +204,13 @@ To create a working macOS Installer boot drive, you will need the following:
 
 ---
 
-### OpenCore Config
+### Resources
 
-For adding your SSDTs, Kexts and Firmware Drivers to create snapshots of your populated EFI folder ([link](https://dortania.github.io/OpenCore-Install-Guide/config.plist/#adding-your-ssdts-kexts-and-firmware-drivers)) use [corpnewt/ProperTree](https://github.com/corpnewt/ProperTree)
+Useful information, tips and tutorials used to create this Hackintosh.
 
-**Add ACPI patches**
+#### OpenCore Config
 
-To manually add ACPI patches do the following
-
-- Copy `{name}.aml` into `EFI/OC/ACPI`
-- Open `config.plist` in OpenCore Configurator
-- Add new files with `ACPI` -> `Scan/Browse`
-  - Select `EFI/OC/ACPI` folder
-  - Add a meaningful `Comment` to SSDT
+When [adding SSDTs, Kexts and Firmware Drivers](https://dortania.github.io/OpenCore-Install-Guide/config.plist/#adding-your-ssdts-kexts-and-firmware-drivers) to the EFI folder, use [OpenCore Configurator](https://mackie100projects.altervista.org/opencore-configurator/) as GUI or [corpnewt/ProperTree](https://github.com/corpnewt/ProperTree) when needing an universal plist-editor.
 
 **Add kexts**
 
@@ -302,49 +223,19 @@ To manually add kexts do the following
   - Add a meaningful `Comment` to kext
   - (Optional: set `MinKernel` and `MaxKernel`)
 
----
+**Add ACPI patches**
 
-### Troubleshooting
+To manually add ACPI patches do the following
 
-Tips and tricks to solve already known problems
-
-**Reset NVRAM**
-
-NVRAM can be reset from OpenCanopy boot picker if auxiliary-entries are displayed in OpenCore ([Link](https://www.reddit.com/r/hackintosh/comments/h0jkjl/hide_partitions_from_opencore_boot_screen/))
-
-- Open `config.plist` with OpenCore Configurator
-- Go to `Misc` -> `Boot` and set `HideAuxiliary = NO`
-- On reboot select `Reset NVRAM` from tools
-
-**AHCI Ports**
-
-Information copied from [SATA Drives Not Shown in DiskUtility](https://www.olarila.com/topic/9616-error-while-installing-big-sur/?do=findComment&comment=117695)
-
-- Make sure SATA Mode is AHCI in bios
-- Certain SATA controllers may not be officially supported by macOS, for these cases you'll want to grab [CtlnaAHCIPort.kext](https://github.com/dortania/OpenCore-Install-Guide/blob/master/extra-files/CtlnaAHCIPort.kext.zip)
-  - For very legacy SATA controllers, [AHCIPortInjector.kext](https://www.insanelymac.com/forum/files/file/436-ahciportinjectorkext/) may be more suitable
-
-**Apple Watch Unlock**
-
-If unlock with Apple Watch doesn't work or make problems although using a `BCM94360CD Fenvi` card, follow the steps of this blogpost comment: [watchOS 7 Beta 5 - unlock mac doesn't work](https://forums.macrumors.com/threads/watchos-7-beta-5-unlock-mac-doesnt-work.2250819/page-2?post=28904426#post-28904426). Afterwards unlock with Apple Watch works like it should with a regular Mac.
-
-**Intel Power Gadget**
-
-The latest version of `Intel Power Gadget` (v3.7.0) is causing  kernel panics when waking from sleep when using SMBIOS `iMacPro1,1`. It doesn't happen with `iMac20,2` SMBIOS, but the overall system speed is lower then. So monitoring of CPU frequency and speed stepping is not possible unless a new version of `Intel Power Gadget` will be released.
-
-**AppleALC**
-
-The `Audio Codec` of ASUS PRIME Z590-P is [Realtek ALC897](https://www.asus.com/de/Motherboards-Components/Motherboards/PRIME/PRIME-Z590-P/techspec/). Although it's listed on `AppleALC` [Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs), none of the possible layout-ids (12, 23, 66, 69) worked. The device is recognized (with different outputs for each layout), but no audio output was possible.
-
----
-
-### Resources
-
-Useful information, tips and tutorials used to create this Hackintosh
+- Copy `{name}.aml` into `EFI/OC/ACPI`
+- Open `config.plist` in OpenCore Configurator
+- Add new files with `ACPI` -> `Scan/Browse`
+  - Select `EFI/OC/ACPI` folder
+  - Add a meaningful `Comment` to SSDT
 
 #### ACPI Patches
 
-Several SSDT patches are [recommended](https://dortania.github.io/Getting-Started-With-ACPI/ssdt-methods/ssdt-prebuilt.html#desktop-comet-lake) to fix following problems
+Several SSDT patches are [recommended](https://dortania.github.io/Getting-Started-With-ACPI/ssdt-methods/ssdt-prebuilt.html#desktop-comet-lake) to fix following problems:
 
 | Problem                     | Patch            | Link                                                                                                                     |
 | --------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------ |
@@ -397,7 +288,7 @@ In OpenCore Configurator go to `Kernel` -> `Patch` and add the following [patch]
 | ------------------------- | -------------- | -------- | -------- | ----- | ------- |
 | com.apple.driver.AppleRTC | F1 error patch | 75330FB7 | EB330FB7 | 1     | &#9745; |
 
-If the error still appears on cold-boots (after power-off), go to `Kernel` -> `Quirks` in OpenCore Configurator and enable &#9745; `DisableRtcChecksum` Quirk ([Fixing RTC write issues](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region)).
+If the error still appears on cold-boots (after power-off), go to `Kernel` -> `Quirks` in OpenCore Configurator and enable `DisableRtcChecksum` Quirk ([Fixing RTC write issues](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region)).
 
 **Bluetooth / Wake**
 
@@ -430,16 +321,50 @@ sudo pmset tcpkeepalive 0
 
 #### Tools
 
-| Name                    | Version  | Download                                                                                                    |
-| ----------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
-| OpenCore Configurator   | 2.52.0.0 | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
-| Hackintool              | 3.6.2    | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
-| 🚨 Intel Power Gadget* 🚨 | 3.7.0    | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
-| IORegistryExplorer      | 2.1      | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
-| MaciASL                 | 1.6.2    | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
-| USBMap                  | -        | [corpnewt/USBMap](https://github.com/corpnewt/USBMap)                                                       |
+| Name                   | Version  | Download                                                                                                    |
+| ---------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
+| OpenCore Configurator  | 2.52.0.0 | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
+| Hackintool             | 3.6.2    | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
+| 🚨 Intel Power Gadget 🚨 | 3.7.0*   | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
+| IORegistryExplorer     | 2.1      | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
+| MaciASL                | 1.6.2    | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
+| USBMap                 | -        | [corpnewt/USBMap](https://github.com/corpnewt/USBMap)                                                       |
 
-*\*Causes Kernel Panic after Sleep on iMacPro1,1*
+*\*This version causes kernel panic after sleep on iMacPro1,1 SMBIOS*
+
+---
+
+### Troubleshooting
+
+Tips and tricks to solve already known problems
+
+**Reset NVRAM**
+
+NVRAM can be reset from OpenCanopy boot picker if auxiliary-entries are displayed in OpenCore ([Link](https://www.reddit.com/r/hackintosh/comments/h0jkjl/hide_partitions_from_opencore_boot_screen/))
+
+- Open `config.plist` with OpenCore Configurator
+- Go to `Misc` -> `Boot` and set `HideAuxiliary = NO`
+- On reboot select `Reset NVRAM` from tools
+
+**AHCI Ports**
+
+Information copied from [SATA Drives Not Shown in DiskUtility](https://www.olarila.com/topic/9616-error-while-installing-big-sur/?do=findComment&comment=117695)
+
+- Make sure SATA Mode is AHCI in bios
+- Certain SATA controllers may not be officially supported by macOS, for these cases you'll want to grab [CtlnaAHCIPort.kext](https://github.com/dortania/OpenCore-Install-Guide/blob/master/extra-files/CtlnaAHCIPort.kext.zip)
+  - For very legacy SATA controllers, [AHCIPortInjector.kext](https://www.insanelymac.com/forum/files/file/436-ahciportinjectorkext/) may be more suitable
+
+**Apple Watch Unlock**
+
+If unlock with Apple Watch doesn't work or make problems although using a `BCM94360CD Fenvi` card, follow the steps of this blogpost comment: [watchOS 7 Beta 5 - unlock mac doesn't work](https://forums.macrumors.com/threads/watchos-7-beta-5-unlock-mac-doesnt-work.2250819/page-2?post=28904426#post-28904426). Afterwards unlock with Apple Watch works like it should with a regular Mac.
+
+**Intel Power Gadget**
+
+The latest version of `Intel Power Gadget` (v3.7.0) is causing  kernel panics when waking from sleep when using SMBIOS `iMacPro1,1`. It doesn't happen with `iMac20,2` SMBIOS, but the overall system speed is lower then. So monitoring of CPU frequency and speed stepping is not possible unless a new version of `Intel Power Gadget` will be released.
+
+**AppleALC**
+
+The `Audio Codec` of ASUS PRIME Z590-P is [Realtek ALC897](https://www.asus.com/de/Motherboards-Components/Motherboards/PRIME/PRIME-Z590-P/techspec/). Although it's listed on `AppleALC` [Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs), none of the possible layout-ids (12, 23, 66, 69) worked. The device is recognized (with different outputs for each layout), but no audio output was possible.
 
 ---
 
@@ -457,75 +382,4 @@ This Hackintosh was build with help of the following repositories and guides:
 
 #### Links and Documentation
 
-**Motivation**
-
-- [Olarila HackBeast GA Z590 UC AD / Core i9 11900k](https://www.olarila.com/topic/13650-olarila-hackbeast-ga-z590-uc-ad-core-i9-11900k-with-thunderbolt-full-dsdt-patches-guide-and-discussion/)
-- [Lorys89/ASROCK_Z590M-ITX-AX_-_i5-11600K](https://github.com/Lorys89/ASROCK_Z590M-ITX-AX_-_i5-11600K_-_RX5600XT)
-- [Big Sur on Z590, 11700K, Maximus XIII Hero](https://www.reddit.com/r/hackintosh/comments/moq26b/big_sur_on_z590_11700k_maximus_xiii_hero_opencore/)
-- [i7 10700k + ROG STRIX Z490-A GAMING + RX 590](https://www.reddit.com/r/hackintosh/comments/gvdrns/i7_10700k_rog_strix_z490a_gaming_rx_590/)
-- [Asus ROG Strix Z490-E Gaming + i9 10900K + OpenCore](https://www.tonymacx86.com/threads/success-asus-rog-strix-z490-e-gaming-i9-10900k-opencore.299137/)
-
-**Hardware**
-
-- [About the Z490 Z590 motherboard](https://www.reddit.com/r/hackintosh/comments/m7ieb3/about_the_z490_z590_motherboard/)
-- [Anyone tested 11th gen i5/i7/i9?](https://www.reddit.com/r/hackintosh/comments/mj7yhd/anyone_tested_11th_gen_i5i7i9/)
-
-**Boot Flags**
-
-- [GPU Buyers Guide - Boot Flags](https://dortania.github.io/GPU-Buyers-Guide/misc/bootflag.html)
-- [LiLu & Plugins mit Bootflags und Beispielen](https://www.hackintosh-forum.de/forum/thread/32411-lilu-plugins-mit-bootflags-und-beispielen/)
-
-**Installation**
-
-- [OpenCore Install Guide - macOS 12: Monterey](https://dortania.github.io/OpenCore-Install-Guide/extras/monterey.html)
-- [Stuck in [apfs_module_start 1689 load com.apple.filesystems.apfs]](https://www.reddit.com/r/hackintosh/comments/iidh7l/stuck_in_apfs_module_start_1689_load/)
-- [AppleUSBXHCIPort::resetandcreatedevice: failed to create device](https://www.tonymacx86.com/threads/solved-appleusbxhciport-resetandcreatedevice-failed-to-create-device.230074/)
-
-**Post-Install**
-
-- [ASUS PRIME Z590-P OpenCore - Probleme nach der Installation](https://www.hackintosh-forum.de/forum/thread/54911-asus-prime-z590-p-opencore-probleme-nach-der-installation/)
-- [acidanthera/OpenCorePkg - AppleKeyboardLayouts](https://github.com/acidanthera/OpenCorePkg/blob/master/Utilities/AppleKeyboardLayouts/AppleKeyboardLayouts.txt)
-- [How can I disable HDMI audio from my Radeon 580?](https://www.reddit.com/r/hackintosh/comments/gqa09d/how_can_i_disable_hdmi_audio_from_my_radeon_580/)
-- [voodooHDA 2.9.7 intermittently works on Big Sur 11.5 beta](https://www.insanelymac.com/forum/topic/348181-voodoohda-297-intermittently-works-on-big-sur-115-beta/)
-- [Updated Tips and Observations for Big Sur and Monterey](https://www.insanelymac.com/forum/topic/346639-updated-tips-and-observations-for-big-sur-and-monterey/)
-
-**USB-Mapping**
-
-- [EliteMacx86 - How to Fix USB Ports on macOS](https://elitemacx86.com/threads/how-to-fix-usb-ports-on-macos.691/)
-- [Activate internal USB Header for Fenvi T919 - ASUS PRIME Z390-A](https://hackintosher.com/forums/thread/activate-internal-usb-header-for-fenvi-t919-asus-prime-z390-a-hackintosh-build-guide-w-rx-5700-xt.10083/)
-- [Problem beim USB Mapping / USB Header für Fenvi Karte nicht erkannt](https://www.hackintosh-forum.de/forum/thread/50161-problem-beim-usb-mapping-usb-header-f%C3%BCr-fenvi-karte-nicht-erkannt/)
-- [Z490, Internal 2.0 headers not showing up](https://www.reddit.com/r/hackintosh/comments/gylqgi/z490_internal_20_headers_not_showing_up/)
-- [Intel-i9-10900-Gigabyte-Z490-Vision-G - USB Port Configuration](https://github.com/samuel21119/Intel-i9-10900-Gigabyte-Z490-Vision-G-Hackintosh/blob/master/USB-Port-Configuration.md)
-- [SSDT-RHUB not working with Usb 2.0](https://www.reddit.com/r/hackintosh/comments/ni8w5n/ssdtrhub_not_working_with_usb_20/)
-
-**AppleALC**
-
-- [OpenCore Post-Install - Fixing audio with AppleALC](https://dortania.github.io/OpenCore-Post-Install/universal/audio.html#finding-your-layout-id)
-- [OpenCore Post-Install - AppleALC working inconsistently](https://dortania.github.io/OpenCore-Post-Install/universal/audio.html#applealc-working-inconsistently)
-- [AppleALC: Stopped working on macOS Monterey](https://github.com/acidanthera/bugtracker/issues/1707)
-- [No Audio with OpenCore on Big Sur, but Works with Clover on Catalina](https://www.tonymacx86.com/threads/solved-no-audio-with-opencore-on-big-sur-but-works-with-clover-on-catalina-lenovo-ideapad-p500.307113/page-2)
-
-**DRM**
-
-- [OpenCore Post-Install - Fixing DRM support and iGPU performance](https://dortania.github.io/OpenCore-Post-Install/universal/drm.html)
-- [acidanthera/WhateverGreen - DRM Compatibility Chart for 10.15](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.Chart.md)
-
-**Intel Power Gadget**
-
-- [System crash with Intel Power Gadget & iStats Menu](https://www.reddit.com/r/hackintosh/comments/hoe2am/system_crash_with_intel_power_gadget_istats_menu/)
-- [Intel Power Gadget (Mac) causes kernel panic](https://community.intel.com/t5/Processors/Intel-Power-Gadget-Mac-causes-kernel-panic/td-p/677739)
-- [Missing IGPU trace with Intel Power Gadget](https://www.tonymacx86.com/threads/solved-missing-igpu-trace-with-intel-power-gadget.280757/)
-
-**Security**
-
-- [Dortania Bugtracker - csr-active-config='E7030000'?](https://github.com/dortania/bugtracker/issues/32)
-- [OpenCore Post-Install - Apple Secure Boot](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#apple-secure-boot)
-- [Modification of System Files Using "csrutil authenticated-root disable"](https://forums.macrumors.com/threads/words-of-caution-regarding-modification-of-system-files-using-csrutil-authenticated-root-disable.2276764/)
-- [How to Disable Gatekeeper from Command Line in Mac OS X](https://osxdaily.com/2015/05/04/disable-gatekeeper-command-line-mac-osx/)
-
-**Performance**
-
-- [XMP 1 and XMP 2 difference](https://rog.asus.com/forum/showthread.php?106270-XMP-1-and-XMP-2-difference)
-- [Downside of using smbios Imac Pro 1,1 for running non-Xeon CPU](https://www.reddit.com/r/hackintosh/comments/fmbl0q/downside_of_using_smbios_imac_pro_11_for_running/)
-- [cpu-monkey - Intel Core i7-11700K vs. Apple M1](https://www.cpu-monkey.com/de/compare_cpu-intel_core_i7_11700k-vs-apple_m1)
-- [cpu-monkey - Intel Core i7-11700K vs. Intel Core i9-11900K](https://www.cpu-monkey.com/de/compare_cpu-intel_core_i7_11700k-vs-intel_core_i9_11900k)
+Find more information in [Docs/LINKS](Docs/LINKS.md).
