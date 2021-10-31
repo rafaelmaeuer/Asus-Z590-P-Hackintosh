@@ -302,6 +302,10 @@ sudo pmset proximitywake 0
 sudo pmset tcpkeepalive 0
 ```
 
+**Card Reader**
+
+The generic Card-Reader doesn't show up in system preferences by default. Use [Generic Card Reader Driver Friend](https://github.com/0xFireWolf/GenericCardReaderFriend) to display some information. Follow this [guide](https://github.com/0xFireWolf/GenericCardReaderFriend/blob/main/FAQ.md) to find the correct `Product ID` and `Vendor ID` that needs to be set in the kexts `info.plist`.
+
 ---
 
 #### Kexts in use
@@ -316,6 +320,7 @@ sudo pmset tcpkeepalive 0
 | NVMe SSD     | NVMeFix.kext                                                 | 1.0.9   | [acidanthera/NVMeFix](https://github.com/acidanthera/NVMeFix)                                                     |
 | CMOS Memory  | RTCMemoryFixup.kext                                          | 1.0.7   | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)                                       |
 | CPU Temp     | XHCI-unsupported.kext                                        | 0.9.2   | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext) |
+| Card Reader  | GenericCardReaderFriend.kext                                 | 1.0.1   | [0xFireWolf/GenericCardReaderFriend](https://github.com/0xFireWolf/GenericCardReaderFriend)                       |
 | (USB Map     | USBInjectAll.kext                                            | 0.7.6   | [Sniki/OS-X-USB-Inject-All](https://github.com/Sniki/OS-X-USB-Inject-All))                                        |
 
 ---
