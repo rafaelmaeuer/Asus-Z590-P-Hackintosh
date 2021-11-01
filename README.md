@@ -237,12 +237,12 @@ To manually add ACPI patches:
 
 Several SSDT patches are [recommended](https://dortania.github.io/Getting-Started-With-ACPI/ssdt-methods/ssdt-prebuilt.html#desktop-comet-lake) to fix following problems:
 
-| Problem                     | Patch            | Link                                                                                                                     |
-| --------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| Fixing System Clocks        | SSDT-AWAC.aml    | [dortania/acpi/awac-methods](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/prebuilt.html)  |
-| Fixing Embedded Controllers | SSDT-EC-USBX.aml | [dortania/acpi/ec-fix]([https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-fix.html)                      |
-| Fixing Power Management     | SSDT-PLUG.aml    | [dortania/acpi/plug]([https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html)                          |
-| Fixing RHUB: SSDTTime       | SSDT-RHUB.aml    | [dortania/acpi/rhub-methods]([https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub-methods/ssdttime.html) |
+| Problem                     | Patch            | Link                                                                                                                    |
+| --------------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Fixing System Clocks        | SSDT-AWAC.aml    | [dortania/acpi/awac-methods](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/prebuilt.html) |
+| Fixing Embedded Controllers | SSDT-EC-USBX.aml | [dortania/acpi/ec-fix](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-fix.html)                      |
+| Fixing Power Management     | SSDT-PLUG.aml    | [dortania/acpi/plug](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html)                          |
+| Fixing RHUB: SSDTTime       | SSDT-RHUB.aml    | [dortania/acpi/rhub-methods](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub-methods/ssdttime.html) |
 
 ---
 
@@ -361,14 +361,6 @@ NVRAM can be reset from OpenCanopy boot picker if auxiliary-entries are displaye
 - Open `config.plist` with OpenCore Configurator
 - Go to `Misc` -> `Boot` and set `HideAuxiliary = NO`
 - On reboot select `Reset NVRAM` from tools
-
-**AHCI Ports**
-
-Information copied from [SATA Drives Not Shown in DiskUtility](https://www.olarila.com/topic/9616-error-while-installing-big-sur/?do=findComment&comment=117695)
-
-- Make sure SATA Mode is AHCI in bios
-- Certain SATA controllers may not be officially supported by macOS, for these cases you'll want to grab [CtlnaAHCIPort.kext](https://github.com/dortania/OpenCore-Install-Guide/blob/master/extra-files/CtlnaAHCIPort.kext.zip)
-  - For very legacy SATA controllers, [AHCIPortInjector.kext](https://www.insanelymac.com/forum/files/file/436-ahciportinjectorkext/) may be more suitable
 
 **Apple Watch Unlock**
 
