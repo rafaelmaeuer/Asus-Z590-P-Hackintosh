@@ -362,6 +362,12 @@ NVRAM can be reset from OpenCanopy boot picker if auxiliary-entries are displaye
 - Go to `Misc` -> `Boot` and set `HideAuxiliary = NO`
 - On reboot select `Reset NVRAM` from tools
 
+**Default Boot Option**
+
+In OpenCore Configurator `Misc` -> `Security` check the option `AllowSetDefault`.
+
+- In OpenCanopy boot picker set default boot-option with `ctrl + enter`
+
 **Apple Watch Unlock**
 
 If unlock with Apple Watch doesn't work or make problems although using a `BCM94360CD Fenvi` card, follow the steps of this blogpost comment: [watchOS 7 Beta 5 - unlock mac doesn't work](https://forums.macrumors.com/threads/watchos-7-beta-5-unlock-mac-doesnt-work.2250819/page-2?post=28904426#post-28904426). Afterwards unlock with Apple Watch works like it should with a regular Mac.

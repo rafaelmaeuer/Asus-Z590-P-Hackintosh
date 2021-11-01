@@ -17,6 +17,7 @@
 
 - [GPU Buyers Guide - Boot Flags](https://dortania.github.io/GPU-Buyers-Guide/misc/bootflag.html)
 - [LiLu & Plugins mit Bootflags und Beispielen](https://www.hackintosh-forum.de/forum/thread/32411-lilu-plugins-mit-bootflags-und-beispielen/)
+- [How to change default boot option for OpenCore](https://www.reddit.com/r/hackintosh/comments/dze9kw/how_to_change_default_boot_option_for_opencore/)
 
 **Installation**
 
