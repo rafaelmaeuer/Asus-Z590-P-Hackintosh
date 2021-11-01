@@ -299,7 +299,7 @@
 				<key>Comment</key>
 				<string>Fix RTC Memory</string>
 				<key>Enabled</key>
-				<true/>
+				<false/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/RTCMemoryFixup</string>
 				<key>MaxKernel</key>
@@ -581,7 +581,7 @@
 				<key>Base</key>
 				<string></string>
 				<key>Comment</key>
-				<string>SATA Hot Plug</string>
+				<string>SATA Hotplug Patch</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
@@ -697,11 +697,11 @@
 		<key>Debug</key>
 		<dict>
 			<key>AppleDebug</key>
-			<true/>
+			<false/>
 			<key>ApplePanic</key>
-			<true/>
+			<false/>
 			<key>DisableWatchDog</key>
-			<true/>
+			<false/>
 			<key>DisplayDelay</key>
 			<integer>0</integer>
 			<key>DisplayLevel</key>
@@ -711,7 +711,7 @@
 			<key>SysReport</key>
 			<false/>
 			<key>Target</key>
-			<integer>3</integer>
+			<integer>0</integer>
 		</dict>
 		<key>Entries</key>
 		<array>
