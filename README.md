@@ -214,7 +214,7 @@ When [adding SSDTs, Kexts and Firmware Drivers](https://dortania.github.io/OpenC
 
 **Add kexts**
 
-To manually add kexts do the following
+To manually add kexts:
 
 - Copy `{name}.kext` into `EFI/OC/Kexts`
 - Open `config.plist` in OpenCore Configurator
@@ -225,7 +225,7 @@ To manually add kexts do the following
 
 **Add ACPI patches**
 
-To manually add ACPI patches do the following
+To manually add ACPI patches:
 
 - Copy `{name}.aml` into `EFI/OC/ACPI`
 - Open `config.plist` in OpenCore Configurator
@@ -286,7 +286,7 @@ In OpenCore Configurator go to `Kernel` -> `Patch` and add the following [patch]
 
 | Identifier                | Comment        | Find     | Replace  | Count | Enabled |
 | ------------------------- | -------------- | -------- | -------- | ----- | ------- |
-| com.apple.driver.AppleRTC | F1 error patch | 75330FB7 | EB330FB7 | 1     | &#9745; |
+| com.apple.driver.AppleRTC | F1 Error Patch | 75330FB7 | EB330FB7 | 1     | &#9745; |
 
 If the error still appears on cold-boots (after power-off), add `RTCMemoryFixup` to your kexts ([Fixing RTC write issues](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html)).
 
@@ -305,6 +305,16 @@ sudo pmset tcpkeepalive 0
 **Card Reader**
 
 The generic Card-Reader doesn't show up in system preferences by default. Use [Generic Card Reader Driver Friend](https://github.com/0xFireWolf/GenericCardReaderFriend) to display some information. Follow this [guide](https://github.com/0xFireWolf/GenericCardReaderFriend/blob/main/FAQ.md) to find the correct `Product ID` and `Vendor ID` that needs to be set in the kexts `info.plist`.
+
+**SATA Hot-Plug**
+
+To get SATA Hot-Plug working, make sure the feature is enabled in BIOS, and apply the following patch:
+
+| Identifier                     | Comment       | Find     | Replace  | Count | Enabled |
+| ------------------------------ | ------------- | -------- | -------- | ----- | ------- |
+| com.apple.driver.AppleAHCIPort | SATA Hot Plug | 40600200 | 00000000 | 1     | &#9745; |
+
+If drives are showing up as external, in OpenCore Configurator go to `Kernel` -> `Quirks` and check the `ExternalDiskIcons` Quirk.
 
 ---
 

@@ -32,6 +32,13 @@
 - [voodooHDA 2.9.7 intermittently works on Big Sur 11.5 beta](https://www.insanelymac.com/forum/topic/348181-voodoohda-297-intermittently-works-on-big-sur-115-beta/)
 - [Updated Tips and Observations for Big Sur and Monterey](https://www.insanelymac.com/forum/topic/346639-updated-tips-and-observations-for-big-sur-and-monterey/)
 
+**SATA Hot-Plug**
+
+- [SATA hot plug patch not working in Big Sur](https://www.tonymacx86.com/threads/solved-sata-hot-plug-patch-not-working-in-big-sur.304869/)
+- [Catalina 10.15 und ICH10 Hotplug](https://www.hackintosh-forum.de/forum/thread/43201-catalina-10-15-und-ich10-hotplug/)
+- [Mojave 10.14.4 SATA Hot-Plug not working](https://www.reddit.com/r/hackintosh/comments/b8x2gl/mojave_10144_sata_hotplug_not_working/)
+- [Internal Drives shown as external](https://www.reddit.com/r/hackintosh/comments/f0cc4t/internal_drives_shown_as_external_opencore_amd/)
+
 **USB-Mapping**
 
 - [EliteMacx86 - How to Fix USB Ports on macOS](https://elitemacx86.com/threads/how-to-fix-usb-ports-on-macos.691/)
