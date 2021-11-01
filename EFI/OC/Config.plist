@@ -8,7 +8,7 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Fixing System Clocks</string>
+				<string>Fix System Clocks</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -16,15 +16,15 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fixing Embedded Controllers</string>
+				<string>Fix Embedded Controllers</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-EC-USBX.aml</string>
+				<string>SSDT-EC.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Fixing Power Management</string>
+				<string>Fix Power Management</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
@@ -32,19 +32,11 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Reset USB RHUB ACPI</string>
+				<string>Reset USB RHUB</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-RHUB.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Fixing SMBus support</string>
-				<key>Enabled</key>
-				<false/>
-				<key>Path</key>
-				<string>SSDT-SBUS-MCHC.aml</string>
+				<string>SSDT-USB-Reset.aml</string>
 			</dict>
 		</array>
 		<key>Delete</key>
