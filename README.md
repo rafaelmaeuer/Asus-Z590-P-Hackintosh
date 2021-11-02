@@ -15,13 +15,14 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 
 - [ASUS PRIME Z590-P Hackintosh](#asus-prime-z590-p-hackintosh)
   - [Information](#information)
-    - [BIOS](#bios)
     - [Hardware](#hardware)
+    - [Performance](#performance)
   - [Install macOS](#install-macos)
-    - [1. Create OpenCore Drive](#1-create-opencore-drive)
-    - [2. Create macOS Installer](#2-create-macos-installer)
-    - [3. Install macOS](#3-install-macos)
-    - [4. Post Installation](#4-post-installation)
+    - [1. OpenCore Drive](#1-opencore-drive)
+    - [2. macOS Installer](#2-macos-installer)
+    - [3. BIOS Settings](#3-bios-settings)
+    - [4. Install macOS](#4-install-macos)
+    - [5. Post Install](#5-post-install)
   - [Update macOS](#update-macos)
   - [Resources](#resources)
     - [OpenCore Config](#opencore-config)
@@ -35,42 +36,6 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 
 ---
 
-#### BIOS
-
-- Update to version 1017 (firmware in [BIOS](/BIOS) folder)
-- Use following BIOS settings (DEL/F2 on boot):
-
-  ```sh
-  Ai Tweaker
-    - Ai Overclock Tuner: XMP I
-    - OC Tuner: OC Tuner II
-  Advanced
-    - System Agent (SA)-Configuration
-      - Graphics Configuration
-        - iGPU Multi-Monitor: Disabled
-    - PCH Storage Configuration
-      - SATA6G_(1-4) Hot Plug: Enabled
-    - Thunderbolt(TM) Configuration
-      - Discrete Thunderbolt(TM) Support: Disabled
-    - PCI Subsystem Settings
-      - Above 4G Decoding: Enabled
-    - USB Configuration
-      - Legacy USB Support: Enabled
-      - XHCI Hand-off: Enabled
-    - Onboard Devices Configuration
-      - Serial Port Configuration
-        - Serial Port: Disabled
-  Boot
-    - CSM (Compatibility Support Module)
-      - Launch CSM: Disabled
-    - Secure Boot
-      - OS Type: Windows UEFI mode
-      - Key Management
-        - Clear Secure Boot Keys: Execute
-    - Boot Configuration
-      - Fast Boot: Disabled
-  ```
-
 #### Hardware
 
 | Component    | Variant                | Link                                                                                                                                     |
@@ -83,11 +48,22 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 | WiFi / BT    | Fenvi FV T919 PCI-E    | [www.fenvi.com](https://www.fenvi.com/product_detail_16.html)                                                                            |
 | SATA / eSata | DIGITUS DS-30104-1     | [www.digitus.info](https://www.digitus.info/de/produkte/computer-und-office-zubehoer/computer-zubehoer/io-karten/ds-30104-1/?PL=en)      |
 
+#### Performance
+
+Geekbench 5 Score of Intel Core i7 11700K CPU
+![i7 11700K CPU Score](Images/cpu-score.png)
+
+Geekbench 5 Score (Metal) of Radeon RX 570 GPU
+![RX 570 GPU Score](Images/gpu-score.png)
+
+Blackmagic Disk Speed of Samsung Pro 980 NVMe SSD
+![NVMe Pro 980 Speed](Images/disk-speed.png)
+
 ---
 
 ### Install macOS
 
-#### 1. Create OpenCore Drive
+#### 1. OpenCore Drive
 
 **a) Preparation**
 
@@ -125,7 +101,7 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 
 ---
 
-#### 2. Create macOS Installer
+#### 2. macOS Installer
 
 To create a working macOS Installer boot drive, you will need the following:
 
@@ -150,7 +126,45 @@ To create a working macOS Installer boot drive, you will need the following:
 
 ---
 
-#### 3. Install macOS
+#### 3. BIOS Settings
+
+- Update to version 1017 (firmware in [BIOS](/BIOS) folder)
+- Use following BIOS settings (DEL/F2 on boot):
+
+  ```sh
+  Ai Tweaker
+    - Ai Overclock Tuner: XMP I
+    - OC Tuner: OC Tuner II
+  Advanced
+    - System Agent (SA)-Configuration
+      - Graphics Configuration
+        - iGPU Multi-Monitor: Disabled
+    - PCH Storage Configuration
+      - SATA6G_(1-4) Hot Plug: Enabled
+    - Thunderbolt(TM) Configuration
+      - Discrete Thunderbolt(TM) Support: Disabled
+    - PCI Subsystem Settings
+      - Above 4G Decoding: Enabled
+    - USB Configuration
+      - Legacy USB Support: Enabled
+      - XHCI Hand-off: Enabled
+    - Onboard Devices Configuration
+      - Serial Port Configuration
+        - Serial Port: Disabled
+  Boot
+    - CSM (Compatibility Support Module)
+      - Launch CSM: Disabled
+    - Secure Boot
+      - OS Type: Windows UEFI mode
+      - Key Management
+        - Clear Secure Boot Keys: Execute
+    - Boot Configuration
+      - Fast Boot: Disabled
+  ```
+
+---
+
+#### 4. Install macOS
 
 - Connect OpenCore Drive to USB2 or USB3 port
 - ⚠️ Connect macOS Installer to **USB2** port ⚠️
@@ -162,7 +176,7 @@ To create a working macOS Installer boot drive, you will need the following:
 
 ---
 
-#### 4. Post Installation
+#### 5. Post Install
 
 **a) OpenCore**
 
@@ -235,14 +249,14 @@ To manually add ACPI patches:
 
 #### ACPI Patches
 
-Several SSDT patches are [recommended](https://dortania.github.io/Getting-Started-With-ACPI/ssdt-methods/ssdt-prebuilt.html#desktop-comet-lake) to fix following problems:
+Several SSDT patches are [recommended](https://dortania.github.io/Getting-Started-With-ACPI/ssdt-methods/ssdt-prebuilt.html#desktop-comet-lake) by dortania (generated with [SSDTTime](https://github.com/corpnewt/SSDTTime)):
 
-| Problem                     | Patch            | Link                                                                                                                    |
-| --------------------------- | ---------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Fixing System Clocks        | SSDT-AWAC.aml    | [dortania/acpi/awac-methods](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/prebuilt.html) |
-| Fixing Embedded Controllers | SSDT-EC-USBX.aml | [dortania/acpi/ec-fix](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-fix.html)                      |
-| Fixing Power Management     | SSDT-PLUG.aml    | [dortania/acpi/plug](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html)                          |
-| Fixing RHUB: SSDTTime       | SSDT-RHUB.aml    | [dortania/acpi/rhub-methods](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub-methods/ssdttime.html) |
+| Problem                  | Patch              | Link                                                                                                                    |
+| ------------------------ | ------------------ | ----------------------------------------------------------------------------------------------------------------------- |
+| Fix System Clocks        | SSDT-AWAC.aml      | [dortania/acpi/awac-methods](https://dortania.github.io/Getting-Started-With-ACPI/Universal/awac-methods/prebuilt.html) |
+| Fix Embedded Controllers | SSDT-EC.aml        | [dortania/acpi/ec-fix](https://dortania.github.io/Getting-Started-With-ACPI/Universal/ec-fix.html)                      |
+| Fix Power Management     | SSDT-PLUG.aml      | [dortania/acpi/plug](https://dortania.github.io/Getting-Started-With-ACPI/Universal/plug.html)                          |
+| Fix USB (Reset RHUB)     | SSDT-USB-Reset.aml | [dortania/acpi/rhub-methods](https://dortania.github.io/Getting-Started-With-ACPI/Universal/rhub-methods/ssdttime.html) |
 
 ---
 
@@ -288,11 +302,11 @@ In OpenCore Configurator go to `Kernel` -> `Patch` and add the following [patch]
 | ------------------------- | -------------- | -------- | -------- | ----- | ------- |
 | com.apple.driver.AppleRTC | F1 Error Patch | 75330FB7 | EB330FB7 | 1     | &#9745; |
 
-If the error still appears on cold-boots (after power-off), add `RTCMemoryFixup` to your kexts ([Fixing RTC write issues](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html)).
+If the error still appears on cold-boots (after power-off), add `RTCMemoryFixup` to your kexts and enable `DisableRtcChecksum` Quirk or try to [find your bad rtc region](https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html#finding-our-bad-rtc-region).
 
 **Bluetooth / Wake**
 
-The internal USB2-ports share the same hub and are used for I/O-Panel and Card-Reader connectors. Therefore an [USB3 to USB2 internal Adapter](https://www.amazon.com/SIENOC-Female-Motherboard-Housing-Adapter/dp/B00EOI3VC8) is used for the Bluetooth-USB connector. To fix connection loss after sleep perform the [Fixing Sleep Preparations](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations):
+The internal USB2-ports share the same hub and are used for I/O-Panel and Card-Reader connectors. Therefore an [USB3 to USB2 internal Adapter](https://www.amazon.com/SIENOC-Female-Motherboard-Housing-Adapter/dp/B00EOI3VC8) is used for the Bluetooth-USB connector. [Fixing Sleep Preparations](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations) help to fix some connection loss after sleep:
 
 ```sh
 sudo pmset autopoweroff 0
@@ -301,6 +315,8 @@ sudo pmset standby 0
 sudo pmset proximitywake 0
 sudo pmset tcpkeepalive 0
 ```
+
+It seems that with Monterey 12.0.1 there are still [issues](https://github.com/acidanthera/bugtracker/issues/1821) with Bluetooth. You can try to enable the `ExtendBTFeatureFlags` Quirk, but otherwise we need to [wait](https://www.tonymacx86.com/threads/bluetooth-doesnt-work-after-wake-on-monterey.315679/#post-2284467) for an update that fixes it.
 
 **Card Reader**
 
@@ -328,7 +344,7 @@ If drives are showing up as external, in OpenCore Configurator go to `Kernel` ->
 | Audio        | VodooHDA.kext                                                | 2.9.7   | [sourceforge.net](https://sourceforge.net/projects/voodoohda/)                                                    |
 | Ethernet     | IntelMausi.kext                                              | 1.0.7   | [Mieze/LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)                                         |
 | NVMe SSD     | NVMeFix.kext                                                 | 1.0.9   | [acidanthera/NVMeFix](https://github.com/acidanthera/NVMeFix)                                                     |
-| CMOS Memory  | RTCMemoryFixup.kext                                          | 1.0.7   | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)                                       |
+| (CMOS Memory | RTCMemoryFixup.kext                                          | 1.0.7   | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup))                                      |
 | CPU Temp     | XHCI-unsupported.kext                                        | 0.9.2   | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext) |
 | Card Reader  | GenericCardReaderFriend.kext                                 | 1.0.1   | [0xFireWolf/GenericCardReaderFriend](https://github.com/0xFireWolf/GenericCardReaderFriend)                       |
 | (USB Map     | USBInjectAll.kext                                            | 0.7.6   | [Sniki/OS-X-USB-Inject-All](https://github.com/Sniki/OS-X-USB-Inject-All))                                        |
@@ -337,14 +353,14 @@ If drives are showing up as external, in OpenCore Configurator go to `Kernel` ->
 
 #### Tools
 
-| Name                   | Version  | Download                                                                                                    |
-| ---------------------- | -------- | ----------------------------------------------------------------------------------------------------------- |
-| OpenCore Configurator  | 2.52.0.0 | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
-| Hackintool             | 3.6.2    | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
-| 🚨 Intel Power Gadget 🚨 | 3.7.0*   | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
-| IORegistryExplorer     | 2.1      | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
-| MaciASL                | 1.6.2    | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
-| USBMap                 | -        | [corpnewt/USBMap](https://github.com/corpnewt/USBMap)                                                       |
+| Name                   | Version   | Download                                                                                                    |
+| ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
+| OpenCore Configurator  | 2.52.0.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
+| Hackintool             | 3.6.2     | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
+| ~~Intel Power Gadget~~ | 3.7.0*  🚨 | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
+| IORegistryExplorer     | 2.1       | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
+| MaciASL                | 1.6.2     | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
+| USBMap                 | -         | [corpnewt/USBMap](https://github.com/corpnewt/USBMap)                                                       |
 
 *\*This version causes kernel panic after sleep on iMacPro1,1 SMBIOS*
 
@@ -356,21 +372,19 @@ Tips and tricks to solve already known problems
 
 **Reset NVRAM**
 
-NVRAM can be reset from OpenCanopy boot picker if auxiliary-entries are displayed in OpenCore ([Link](https://www.reddit.com/r/hackintosh/comments/h0jkjl/hide_partitions_from_opencore_boot_screen/))
+In OpenCore Configurator go to `Misc` -> `Boot` and uncheck the option `HideAuxiliary`.
 
-- Open `config.plist` with OpenCore Configurator
-- Go to `Misc` -> `Boot` and set `HideAuxiliary = NO`
-- On reboot select `Reset NVRAM` from tools
+- On reboot select `Reset NVRAM` from OpenCanopy boot-options
 
 **Default Boot Option**
 
-In OpenCore Configurator `Misc` -> `Security` check the option `AllowSetDefault`.
+In OpenCore Configurator go to `Misc` -> `Security` and check the option `AllowSetDefault`.
 
 - In OpenCanopy boot picker set default boot-option with `ctrl + enter`
 
 **Apple Watch Unlock**
 
-If unlock with Apple Watch doesn't work or make problems although using a `BCM94360CD Fenvi` card, follow the steps of this blogpost comment: [watchOS 7 Beta 5 - unlock mac doesn't work](https://forums.macrumors.com/threads/watchos-7-beta-5-unlock-mac-doesnt-work.2250819/page-2?post=28904426#post-28904426). Afterwards unlock with Apple Watch works like it should with a regular Mac.
+If unlock with Apple Watch doesn't work or make problems although using a `BCM94360CD Fenvi` card, follow the steps of this blogpost comment: [watchOS 7 Beta 5 - unlock mac doesn't work](https://forums.macrumors.com/threads/watchos-7-beta-5-unlock-mac-doesnt-work.2250819/page-2?post=28904426#post-28904426). Afterwards unlock with Apple Watch works like a normal Mac (since BLE isn't working in Monterey yet, it might not work anymore).
 
 **Intel Power Gadget**
 

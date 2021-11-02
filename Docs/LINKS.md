@@ -12,12 +12,14 @@
 
 - [About the Z490 Z590 motherboard](https://www.reddit.com/r/hackintosh/comments/m7ieb3/about_the_z490_z590_motherboard/)
 - [Anyone tested 11th gen i5/i7/i9?](https://www.reddit.com/r/hackintosh/comments/mj7yhd/anyone_tested_11th_gen_i5i7i9/)
+- [Do I really need NVMeFix.kext?](https://www.reddit.com/r/hackintosh/comments/fybvze/do_i_really_need_nvmefixkext/)
 
 **Boot Flags**
 
 - [GPU Buyers Guide - Boot Flags](https://dortania.github.io/GPU-Buyers-Guide/misc/bootflag.html)
 - [LiLu & Plugins mit Bootflags und Beispielen](https://www.hackintosh-forum.de/forum/thread/32411-lilu-plugins-mit-bootflags-und-beispielen/)
 - [How to change default boot option for OpenCore](https://www.reddit.com/r/hackintosh/comments/dze9kw/how_to_change_default_boot_option_for_opencore/)
+- [Hide partitions from OpenCore boot screen (OpenCanopy)](https://www.reddit.com/r/hackintosh/comments/h0jkjl/hide_partitions_from_opencore_boot_screen/)
 
 **Installation**
 
@@ -48,6 +50,14 @@
 - [Z490, Internal 2.0 headers not showing up](https://www.reddit.com/r/hackintosh/comments/gylqgi/z490_internal_20_headers_not_showing_up/)
 - [Intel-i9-10900-Gigabyte-Z490-Vision-G - USB Port Configuration](https://github.com/samuel21119/Intel-i9-10900-Gigabyte-Z490-Vision-G-Hackintosh/blob/master/USB-Port-Configuration.md)
 - [SSDT-RHUB not working with Usb 2.0](https://www.reddit.com/r/hackintosh/comments/ni8w5n/ssdtrhub_not_working_with_usb_20/)
+
+**Bluetooth**
+
+- [Bluetooth doesn't work after wake on Monterey](https://www.tonymacx86.com/threads/bluetooth-doesnt-work-after-wake-on-monterey.315679)
+- [BlueToolFixup has known issues with beta 5+](https://github.com/acidanthera/bugtracker/issues/1821)
+- [CpuTscSync.kext and Unlock with AppleWach and bluetoothd crash](https://github.com/acidanthera/bugtracker/issues/1833)
+- [Fenvi Wi-Fi Card and Bluetooth / USB Header](https://forums.macrumors.com/threads/fenvi-wi-fi-card-and-bluetooth-usb-header.2235776/)
+- [Catalina no Bluetooth with Fenvi FV-T919. WiFi is working.](https://www.tonymacx86.com/threads/catalina-no-bluetooth-with-fenvi-fv-t919-wifi-is-working.284723/)
 
 **AppleALC**
 
