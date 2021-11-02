@@ -24,6 +24,7 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
     - [4. Install macOS](#4-install-macos)
     - [5. Post Install](#5-post-install)
   - [Update macOS](#update-macos)
+  - [DualBoot Windows](#dualboot-windows)
   - [Resources](#resources)
     - [OpenCore Config](#opencore-config)
     - [ACPI Patches](#acpi-patches)
@@ -217,6 +218,24 @@ To create a working macOS Installer boot drive, you will need the following:
     - If `Software Update` shows `Mac version is up to date`, download macOS Installer from AppStore and initialize the update manually
 - If system doesn't boot on one of these steps
   - Try to fix the problem or revert to the latest backup
+
+---
+
+### DualBoot Windows
+
+- In OpenCore Configurator (prevent breaking activation)
+  - Check `Kernel` -> `Quirks` -> `CustomSMBIOSGuid`
+  - Set `PlatformInfo` -> `UpdateSMBIOSMode` to `Custom`
+- Create new partition (~106 GB min) with `disk utility`
+- Create a Windows 11 Installer with [Rufus](https://rufus.ie/) (TPM 2.0 + Secure-Boot)
+- Select `Windows` boot entry in OpenCanopy to begin installation
+- Delete the partition from installer and let Windows re-create it
+- Use the `Z590-P Driver-DVD` to install all missing drivers
+- Unzip drivers in [Windows/Driver](Windows/Driver/) folder and install manually from Device-Manager (`Broadcom BT/WiFi` and `Marvel Console`)
+- For Magic Mouse scrolling install `AppleWirelessMouse64.exe` from [Windows/Mouse](Windows/Mouse/) folder
+- For Scroll-Inversion follow the instructions from [windowscentral.com](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
+- For Keyboard remapping use [AutoHotkey](https://www.autohotkey.com/) and [SharpKeys](https://github.com/randyrants/sharpkeys) with proper config files from [Windows/Keyboard](Windows/Keyboard/) folder
+- Fix incorrect clock settings by instructions from [lifehacker.com](https://lifehacker.com/fix-incorrect-clock-settings-in-windows-when-dual-booti-5742148)
 
 ---
 

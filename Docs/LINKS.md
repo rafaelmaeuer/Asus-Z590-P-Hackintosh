@@ -97,3 +97,10 @@
 - [cpu-monkey - Intel Core i7-11700K vs. Apple M1](https://www.cpu-monkey.com/de/compare_cpu-intel_core_i7_11700k-vs-apple_m1)
 - [cpu-monkey - Intel Core i7-11700K vs. Intel Core i9-11900K](https://www.cpu-monkey.com/de/compare_cpu-intel_core_i7_11700k-vs-intel_core_i9_11900k)
 - [How to enable Intel(VMX) Virtualization Technology in the BIOS](https://www.asus.com/support/FAQ/1043786/)
+
+**DualBoot Windows**
+
+- [Magic Mouse 2 Scrolling on Windows 10](https://github.com/heisian/magic-mouse-2-scrolling-windows-free)
+- [How to reverse mouse and touchpad scrolling direction on Windows 10](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
+- [Wie deaktiviere ich das automatische Herunterladen von Armoury Crate im BIOS?](https://www.asus.com/de/support/FAQ/1043788/)
+- [Fix Incorrect Clock Settings in Windows When Dual-Booting with OS X or Linux](https://lifehacker.com/fix-incorrect-clock-settings-in-windows-when-dual-booti-5742148)
