@@ -96,3 +96,4 @@
 - [Downside of using smbios Imac Pro 1,1 for running non-Xeon CPU](https://www.reddit.com/r/hackintosh/comments/fmbl0q/downside_of_using_smbios_imac_pro_11_for_running/)
 - [cpu-monkey - Intel Core i7-11700K vs. Apple M1](https://www.cpu-monkey.com/de/compare_cpu-intel_core_i7_11700k-vs-apple_m1)
 - [cpu-monkey - Intel Core i7-11700K vs. Intel Core i9-11900K](https://www.cpu-monkey.com/de/compare_cpu-intel_core_i7_11700k-vs-intel_core_i9_11900k)
+- [How to enable Intel(VMX) Virtualization Technology in the BIOS](https://www.asus.com/support/FAQ/1043786/)

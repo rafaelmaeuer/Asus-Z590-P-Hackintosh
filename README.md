@@ -136,6 +136,8 @@ To create a working macOS Installer boot drive, you will need the following:
     - Ai Overclock Tuner: XMP I
     - OC Tuner: OC Tuner II
   Advanced
+    - CPU Configuration
+      - Intel (VMX) Virtualization Technology: Enabled
     - System Agent (SA)-Configuration
       - Graphics Configuration
         - iGPU Multi-Monitor: Disabled
