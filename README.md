@@ -32,7 +32,7 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
     - [Kexts in use](#kexts-in-use)
     - [Tools](#tools)
   - [Troubleshooting](#troubleshooting)
-  - [Contribution](#contribution)
+  - [Credits](#credits)
     - [Links and Documentation](#links-and-documentation)
 
 ---
@@ -405,7 +405,7 @@ In OpenCore Configurator go to `Misc` -> `Security` and check the option `AllowS
 
 **Apple Watch Unlock**
 
-If unlock with Apple Watch doesn't work or make problems although using a `BCM94360CD Fenvi` card, follow the steps of this blogpost comment: [watchOS 7 Beta 5 - unlock mac doesn't work](https://forums.macrumors.com/threads/watchos-7-beta-5-unlock-mac-doesnt-work.2250819/page-2?post=28904426#post-28904426). Afterwards unlock with Apple Watch works like a normal Mac (since BLE isn't working in Monterey yet, it might not work anymore).
+If unlock with Apple Watch doesn't work or make problems although using a `BCM94360CD Fenvi` card, follow the steps of this blogpost comment: [watchOS 7 Beta 5 - unlock mac doesn't work](https://forums.macrumors.com/threads/watchos-7-beta-5-unlock-mac-doesnt-work.2250819/page-2?post=28904426#post-28904426). Afterwards unlock with Apple Watch works like a normal Mac.
 
 **Intel Power Gadget**
 
@@ -417,7 +417,7 @@ The `Audio Codec` of ASUS PRIME Z590-P is [Realtek ALC897](https://www.asus.com/
 
 ---
 
-### Contribution
+### Credits
 
 This Hackintosh was build with help of the following repositories and guides:
 
