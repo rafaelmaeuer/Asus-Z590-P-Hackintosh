@@ -89,6 +89,7 @@
 - [OpenCore Post-Install - Apple Secure Boot](https://dortania.github.io/OpenCore-Post-Install/universal/security/applesecureboot.html#apple-secure-boot)
 - [Modification of System Files Using "csrutil authenticated-root disable"](https://forums.macrumors.com/threads/words-of-caution-regarding-modification-of-system-files-using-csrutil-authenticated-root-disable.2276764/)
 - [How to Disable Gatekeeper from Command Line in Mac OS X](https://osxdaily.com/2015/05/04/disable-gatekeeper-command-line-mac-osx/)
+- [SilentKnight, silnite, LockRattler, SystHist & Scrub](https://eclecticlight.co/lockrattler-systhist/)
 
 **Performance**
 

@@ -848,7 +848,7 @@
 				<key>boot-args</key>
 				<string>keepsyms=1 debug=0x100</string>
 				<key>csr-active-config</key>
-				<data>7w8AAA==</data>
+				<string>0x0285</string>
 				<key>prev-lang:kbd</key>
 				<string>en-US:0</string>
 				<key>run-efi-updater</key>
