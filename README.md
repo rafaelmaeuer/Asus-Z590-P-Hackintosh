@@ -223,9 +223,6 @@ To create a working macOS Installer boot drive, you will need the following:
 
 ### DualBoot Windows
 
-- In OpenCore Configurator (prevent breaking activation)
-  - Check `Kernel` -> `Quirks` -> `CustomSMBIOSGuid`
-  - Set `PlatformInfo` -> `UpdateSMBIOSMode` to `Custom`
 - Create new partition (~106 GB min) with `disk utility`
 - Create a Windows 11 Installer with [Rufus](https://rufus.ie/) (TPM 2.0 + Secure-Boot)
 - Select `Windows` boot entry in OpenCanopy to begin installation
@@ -236,6 +233,9 @@ To create a working macOS Installer boot drive, you will need the following:
 - For Scroll-Inversion follow the instructions from [windowscentral.com](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
 - For Keyboard remapping use [AutoHotkey](https://www.autohotkey.com/) and [SharpKeys](https://github.com/randyrants/sharpkeys) with proper config files from [Windows/Keyboard](Windows/Keyboard/) folder
 - Fix incorrect clock settings by instructions from [lifehacker.com](https://lifehacker.com/fix-incorrect-clock-settings-in-windows-when-dual-booti-5742148)
+- Currently there are two concurrent problems:
+  - Don't install BT-Driver in Windows: Mouse works on both OS while restart, but no Scroll in Windows
+  - Install BT-Driver in Windows: Scrolling in Windows works, but restart breaks connection for other OS
 
 ---
 

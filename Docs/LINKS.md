@@ -100,7 +100,9 @@
 
 **DualBoot Windows**
 
+- [Booting Windows from OpenCore: Is it bad?](https://www.reddit.com/r/hackintosh/comments/h0y0hl/booting_windows_from_opencore_is_it_bad/)
 - [Magic Mouse 2 Scrolling on Windows 10](https://github.com/heisian/magic-mouse-2-scrolling-windows-free)
+- [Magic Mouse 2 Pair with Windows 10 on BootCamp](https://discussions.apple.com/thread/7439976)
 - [How to reverse mouse and touchpad scrolling direction on Windows 10](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
 - [Wie deaktiviere ich das automatische Herunterladen von Armoury Crate im BIOS?](https://www.asus.com/de/support/FAQ/1043788/)
 - [Fix Incorrect Clock Settings in Windows When Dual-Booting with OS X or Linux](https://lifehacker.com/fix-incorrect-clock-settings-in-windows-when-dual-booti-5742148)
