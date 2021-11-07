@@ -7,7 +7,7 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 ### Information
 
 - macOS: [Monterey 12.0.1](https://support.apple.com/en-us/HT212585)
-- bootloader: [OpenCore 0.7.4](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.7.4)
+- bootloader: [OpenCore 0.7.5](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.7.5)
 
 ---
 
