@@ -51,6 +51,14 @@
 - [Intel-i9-10900-Gigabyte-Z490-Vision-G - USB Port Configuration](https://github.com/samuel21119/Intel-i9-10900-Gigabyte-Z490-Vision-G-Hackintosh/blob/master/USB-Port-Configuration.md)
 - [SSDT-RHUB not working with Usb 2.0](https://www.reddit.com/r/hackintosh/comments/ni8w5n/ssdtrhub_not_working_with_usb_20/)
 
+
+**USB3-Speed**
+
+- [OC 6.5 | OSX 10.11.1 | USB 2.0 (HS) ONLY](https://www.hackintosh-forum.de/forum/thread/52356-oc-6-5-osx-10-11-1-usb-2-0-hs-only/)
+- [Everything's Working except USB 3.2/USB 3](https://www.reddit.com/r/hackintosh/comments/j75i16/everythings_working_except_usb_32usb_3_opencore/g83bq15/?context=1)
+- [Can't Discover my USB3 Personalities Device on SS port](https://www.reddit.com/r/hackintosh/comments/jabaa1/usb_mappingopencore_cant_discover_my_usb3/)
+- [PLEASE help me get these USB 3 ports working](https://www.reddit.com/r/hackintosh/comments/id1lm9/please_help_me_get_these_usb_3_ports_working/?utm_source=share&utm_medium=ios_app&utm_name=iossmf)
+
 **Bluetooth**
 
 - [Bluetooth doesn't work after wake on Monterey](https://www.tonymacx86.com/threads/bluetooth-doesnt-work-after-wake-on-monterey.315679)
@@ -91,10 +99,15 @@
 - [How to Disable Gatekeeper from Command Line in Mac OS X](https://osxdaily.com/2015/05/04/disable-gatekeeper-command-line-mac-osx/)
 - [SilentKnight, silnite, LockRattler, SystHist & Scrub](https://eclecticlight.co/lockrattler-systhist/)
 
+**SMBIOS**
+
+- [Downside of using smbios Imac Pro 1,1 for running non-Xeon CPU](https://www.reddit.com/r/hackintosh/comments/fmbl0q/downside_of_using_smbios_imac_pro_11_for_running/)
+- [Sidecar and SMBIOS : iMac19,1 vs. iMacPro1,1](https://www.reddit.com/r/hackintosh/comments/dwbncg/sidecar_and_smbios_imac191_vs_imacpro11/)
+- [OpenCore Install Guide - Desktop Comet Lake - iGPU](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html#deviceproperties)
+
 **Performance**
 
 - [XMP 1 and XMP 2 difference](https://rog.asus.com/forum/showthread.php?106270-XMP-1-and-XMP-2-difference)
-- [Downside of using smbios Imac Pro 1,1 for running non-Xeon CPU](https://www.reddit.com/r/hackintosh/comments/fmbl0q/downside_of_using_smbios_imac_pro_11_for_running/)
 - [cpu-monkey - Intel Core i7-11700K vs. Apple M1](https://www.cpu-monkey.com/de/compare_cpu-intel_core_i7_11700k-vs-apple_m1)
 - [cpu-monkey - Intel Core i7-11700K vs. Intel Core i9-11900K](https://www.cpu-monkey.com/de/compare_cpu-intel_core_i7_11700k-vs-intel_core_i9_11900k)
 - [How to enable Intel(VMX) Virtualization Technology in the BIOS](https://www.asus.com/support/FAQ/1043786/)

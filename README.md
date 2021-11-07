@@ -305,13 +305,27 @@ In OpenCore Configurator go to `Misc` -> `Security` and set
 
 **USB Mapping**
 
-An USB port-mapping was created with [OpenCore Post-Install - USB Mapping](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html) guide and [corpnewt/USBMap](https://github.com/corpnewt/USBMap) tool. The following exported files can be found in [USB](/USB) folder:
+An USB port-mapping can be created with [OpenCore Post-Install - USB Mapping](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html) guide and [corpnewt/USBMap](https://github.com/corpnewt/USBMap) tool.
 
-| Path         | File                | Descrition             |
-| ------------ | ------------------- | ---------------------- |
-| USB/         | SSDT-RHUB-Reset.aml | compiled ssdt-patch    |
-| USB/Results/ | SSDT-RHUB-Reset.dsl | ssdt-patch source file |
-| USB/Results/ | USBMap.kext         | USB port-mapping kext  |
+- Use Back-Panel USB2-Ports for Mouse and Keyboard
+- Use `SSDT-USB-Reset.aml` (or `SSDT-RHUB.aml`) for USB-Reset
+- Boot with `USBInjectAll.kext` and &#9745; `XhciPortLimit` enabled
+- Run `USBmap.command` and test all ports with USB2/3/C Devices
+- Give each port a unique name like e.g. `USB3(HS) Back Left`
+- After discovery and naming set the correct port-types
+  - USB2: 0
+  - USB3: 3
+  - USB-C: 9
+  - Internal: 255
+- Export `USBMap.kext` and add it to EFI and OpenCore
+- Disable `XhciPortLimit` and remove `USBInjectAll.kext`
+
+The following generated files can be found in [USB](/USB) folder:
+
+| Path         | File        | Descrition            |
+| ------------ | ----------- | --------------------- |
+| USB/Results/ | USBMap.kext | USB port-mapping kext |
+| USB/Scripts/ | USB.plist   | USB port-naming list  |
 
 **RTC / F1 Error**
 
