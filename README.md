@@ -373,8 +373,8 @@ If drives are showing up as external, in OpenCore Configurator go to `Kernel` ->
 
 | Type         | Kext                                                         | Version | Author                                                                                                            |
 | ------------ | ------------------------------------------------------------ | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| Patch Engine | Lilu.kext                                                    | 1.5.6   | [acidanthera/Lilu](https://github.com/acidanthera/Lilu)                                                           |
-| Graphics     | WhateverGreen.kext                                           | 1.5.4   | [acidanthera/WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                         |
+| Patch Engine | Lilu.kext                                                    | 1.5.7   | [acidanthera/Lilu](https://github.com/acidanthera/Lilu)                                                           |
+| Graphics     | WhateverGreen.kext                                           | 1.5.5   | [acidanthera/WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                         |
 | Sensors      | VirtualSMC.kext <br> SMCSuperIO.kext <br>  SMCProcessor.kext | 1.2.7   | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                               |
 | Audio        | VodooHDA.kext                                                | 2.9.7   | [sourceforge.net](https://sourceforge.net/projects/voodoohda/)                                                    |
 | Ethernet     | IntelMausi.kext                                              | 1.0.7   | [Mieze/LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)                                         |
