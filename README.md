@@ -6,8 +6,22 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 
 ### Information
 
-- macOS: [Monterey 12.0.1](https://support.apple.com/en-us/HT212585)
-- bootloader: [OpenCore 0.7.5](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.7.5)
+This Hackintosh was created with help of some motivating projects like [SchmockLord/Gigabyte-Z590i-Vision-D-11900k](https://github.com/SchmockLord/Gigabyte-Z590i-Vision-D-11900k) and the OpenCore guide [Desktop Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html) as base.
+
+<div style="display: flex">
+  <div style="flex: 1"> 
+    <ul>
+      <li>macOS: <a href="https://support.apple.com/en-us/HT212585">Monterey 12.0.1</a></li>
+      <li>bootloader: <a href="https://github.com/acidanthera/OpenCorePkg/releases/tag/0.7.5">OpenCore 0.7.5</a></li>
+    </ul>
+  </div>
+  <div style="flex: 1"> 
+    <a href="https://www.buymeacoffee.com/rafaelmaeuer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=rafaelmaeuer&button_colour=dedede&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=FFDD00"></a>
+  </div>
+</div>
+
+<!-- - macOS: [Monterey 12.0.1](https://support.apple.com/en-us/HT212585)
+- bootloader: [OpenCore 0.7.5](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.7.5) -->
 
 ---
 
