@@ -377,9 +377,9 @@ If drives are showing up as external, in OpenCore Configurator go to `Kernel` ->
 
 | Type         | Kext                                                         | Version | Author                                                                                                            |
 | ------------ | ------------------------------------------------------------ | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| Patch Engine | Lilu.kext                                                    | 1.5.7   | [acidanthera/Lilu](https://github.com/acidanthera/Lilu)                                                           |
+| Patch Engine | Lilu.kext                                                    | 1.5.8   | [acidanthera/Lilu](https://github.com/acidanthera/Lilu)                                                           |
 | Graphics     | WhateverGreen.kext                                           | 1.5.5   | [acidanthera/WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                         |
-| Sensors      | VirtualSMC.kext <br> SMCSuperIO.kext <br>  SMCProcessor.kext | 1.2.7   | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                               |
+| Sensors      | VirtualSMC.kext <br> SMCSuperIO.kext <br>  SMCProcessor.kext | 1.2.8   | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                               |
 | Audio        | VodooHDA.kext                                                | 2.9.7   | [sourceforge.net](https://sourceforge.net/projects/voodoohda/)                                                    |
 | Ethernet     | IntelMausi.kext                                              | 1.0.7   | [Mieze/LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)                                         |
 | NVMe SSD     | NVMeFix.kext                                                 | 1.0.9   | [acidanthera/NVMeFix](https://github.com/acidanthera/NVMeFix)                                                     |
@@ -395,7 +395,7 @@ If drives are showing up as external, in OpenCore Configurator go to `Kernel` ->
 | Name                   | Version   | Download                                                                                                    |
 | ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
 | OpenCore Configurator  | 2.52.0.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
-| Hackintool             | 3.6.2     | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
+| Hackintool             | 3.7.8     | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
 | ~~Intel Power Gadget~~ | 3.7.0*  🚨 | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
 | IORegistryExplorer     | 2.1       | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
 | MaciASL                | 1.6.2     | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
