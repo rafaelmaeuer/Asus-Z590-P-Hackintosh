@@ -9,7 +9,7 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 This Hackintosh was created with help of some motivating projects like [SchmockLord/Gigabyte-Z590i-Vision-D-11900k](https://github.com/SchmockLord/Gigabyte-Z590i-Vision-D-11900k) and the OpenCore guide [Desktop Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html) as base.
 
 - macOS: [Monterey 12.0.1](https://support.apple.com/en-us/HT212585)
-- bootloader: [OpenCore 0.7.5](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.7.5)
+- bootloader: [OpenCore 0.7.6](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.7.6)
 
 <a href="https://www.buymeacoffee.com/rafaelmaeuer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕️&slug=rafaelmaeuer&button_colour=F2F2F2&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
 
@@ -394,7 +394,7 @@ If drives are showing up as external, in OpenCore Configurator go to `Kernel` ->
 
 | Name                   | Version   | Download                                                                                                    |
 | ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
-| OpenCore Configurator  | 2.52.0.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
+| OpenCore Configurator  | 2.54.1.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
 | Hackintool             | 3.7.8     | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
 | ~~Intel Power Gadget~~ | 3.7.0*  🚨 | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
 | IORegistryExplorer     | 2.1       | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
