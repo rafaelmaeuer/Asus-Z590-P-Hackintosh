@@ -58,8 +58,14 @@ Guide created with [yahgoo/installVoodooHDA4BSnMont](https://github.com/yahgoo/i
 
   6. Wait for prompt `System Extension Updated` and accept it. Open System Preferences and allow kext modification, **don't reboot**.
   7. Open `Hackintool` -> `Utilities` -> `Rebuild KectCache and Repair Permissions`, enter password and accept mounting in read/write mode.
-  8. Reboot and check if audio device is working as expected.
-  9. Revert all changes (keep `csr-active-config`):
+  8. Seal Volume and create a new snapshot (check if the mount point equals `/Volumes/Monterey\ 1/` e.g. with `diskutil apfs list`)
+
+      ```sh
+      sudo bless --folder /Volumes/Monterey\ 1/System/Library/CoreServices --bootefi --create-snapshot
+      ```
+
+  9.  Reboot and check if audio device is working as expected.
+  10. Revert all changes (keep `csr-active-config`):
 
         Re-Enable `GateKeeper` and verify status (should be `enabled`)
 
@@ -88,4 +94,12 @@ Guide created with [yahgoo/installVoodooHDA4BSnMont](https://github.com/yahgoo/i
         > Authenticated Root status: enabled
         ```
 
-  10. Enjoy Audio :)
+  11. Enjoy Audio :)
+
+## Links
+
+- [(Snapshot sealed: broken) Reparatur Möglichkeit](https://www.hackintosh-forum.de/forum/thread/53293-snapshot-sealed-broken-reparatur-m%C3%B6glichkeit/?postID=686967#post686967)
+- [Big Sur’s Signed System Volume: added security protection](https://eclecticlight.co/2020/06/25/big-surs-signed-system-volume-added-security-protection/)
+- [Why you can’t make a snapshot of Big Sur’s System volume to roll back
+](https://eclecticlight.co/2021/06/11/why-you-cant-make-a-snapshot-of-big-surs-system-volume-to-roll-back/)
+- [OpenCore and macOS 11: Big Sur - Broken Seal](https://dortania.github.io/OpenCore-Install-Guide/extras/big-sur/#broken-seal)
