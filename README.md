@@ -200,7 +200,7 @@ To create a working macOS Installer boot drive, you will need the following:
 
 **c) Drivers/Kexts**
 
-- Install VoodooHDA by following instructions in [Docs/AUDIO.md](Docs/AUDIO.md).
+- (Optional) Install VoodooHDA by following instructions in [Docs/AUDIO.md](Docs/AUDIO.md).
 
 **d) Security**
 
@@ -375,22 +375,36 @@ To get SATA Hot-Plug working, make sure the feature is enabled in BIOS, and appl
 
 If drives are showing up as external, in OpenCore Configurator go to `Kernel` -> `Quirks` and check the `ExternalDiskIcons` Quirk.
 
+**Audio**
+
+The `Audio Codec` of ASUS PRIME Z590-P is [Realtek ALC897](https://www.asus.com/de/Motherboards-Components/Motherboards/PRIME/PRIME-Z590-P/techspec/). Layout-id 11 on `AppleALC` [Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs) gives basic audio output.
+
+- For AppleHDA add `AppleHDA.kext` and `alcid=11` bootflag
+
+VoodooHDA is also working (requires harder setup) and can be used for advanced audio configuration.
+
+- For VoodooHDA disable `AppleHDA.kext` and `alcid=11` bootflag and follow [Docs/AUDIO.md](Docs/AUDIO.md)
+
+*Note: Every macOS updates requires VoodooHDA to be re-installed again!*
+
 ---
 
 #### Kexts in use
 
-| Type         | Kext                                                         | Version | Author                                                                                                            |
-| ------------ | ------------------------------------------------------------ | ------- | ----------------------------------------------------------------------------------------------------------------- |
-| Patch Engine | Lilu.kext                                                    | 1.6.0   | [acidanthera/Lilu](https://github.com/acidanthera/Lilu)                                                           |
-| Graphics     | WhateverGreen.kext                                           | 1.5.8   | [acidanthera/WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                         |
-| Sensors      | VirtualSMC.kext <br> SMCSuperIO.kext <br>  SMCProcessor.kext | 1.2.9   | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                               |
-| Audio        | VodooHDA.kext                                                | 2.9.7   | [sourceforge.net](https://sourceforge.net/projects/voodoohda/)                                                    |
-| Ethernet     | IntelMausi.kext                                              | 1.0.7   | [Mieze/LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)                                         |
-| NVMe SSD     | NVMeFix.kext                                                 | 1.0.9   | [acidanthera/NVMeFix](https://github.com/acidanthera/NVMeFix)                                                     |
-| (CMOS Memory | RTCMemoryFixup.kext                                          | 1.0.7   | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup))                                      |
-| CPU Temp     | XHCI-unsupported.kext                                        | 0.9.2   | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext) |
-| Card Reader  | GenericCardReaderFriend.kext                                 | 1.0.1   | [0xFireWolf/GenericCardReaderFriend](https://github.com/0xFireWolf/GenericCardReaderFriend)                       |
-| (USB Map     | USBInjectAll.kext                                            | 0.7.6   | [Sniki/OS-X-USB-Inject-All](https://github.com/Sniki/OS-X-USB-Inject-All))                                        |
+| Type         | Kext                                                         | Version          | Author                                                                                                                              |
+| ------------ | ------------------------------------------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| Patch Engine | Lilu.kext                                                    | 1.6.0            | [acidanthera/Lilu](https://github.com/acidanthera/Lilu)                                                                             |
+| Graphics     | WhateverGreen.kext                                           | 1.5.8            | [acidanthera/WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                                           |
+| Sensors      | VirtualSMC.kext <br> SMCSuperIO.kext <br>  SMCProcessor.kext | 1.2.9            | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                                 |
+| Audio        | AppleALC <br> VodooHDA.kext*                                 | 1.7.0 <br> 2.9.7 | [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC) <br> [sourceforge.net](https://sourceforge.net/projects/voodoohda/) |
+| Ethernet     | IntelMausi.kext                                              | 1.0.7            | [Mieze/LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)                                                           |
+| NVMe SSD     | NVMeFix.kext                                                 | 1.0.9            | [acidanthera/NVMeFix](https://github.com/acidanthera/NVMeFix)                                                                       |
+| (CMOS Memory | RTCMemoryFixup.kext                                          | 1.0.7            | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup))                                                        |
+| CPU Temp     | XHCI-unsupported.kext                                        | 0.9.2            | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext)                   |
+| Card Reader  | GenericCardReaderFriend.kext                                 | 1.0.1            | [0xFireWolf/GenericCardReaderFriend](https://github.com/0xFireWolf/GenericCardReaderFriend)                                         |
+| (USB Map     | USBInjectAll.kext                                            | 0.7.6            | [Sniki/OS-X-USB-Inject-All](https://github.com/Sniki/OS-X-USB-Inject-All))                                                          |
+
+*\*Kext needs special setup, see [Docs/AUDIO.md](Docs/AUDIO.md)*
 
 ---
 
@@ -433,10 +447,6 @@ If unlock with Apple Watch doesn't work or make problems although using a `BCM94
 
 The latest version of `Intel Power Gadget` (v3.7.0) is causing  kernel panics when waking from sleep when using SMBIOS `iMacPro1,1`. It doesn't happen with `iMac20,2` SMBIOS, but the overall system speed is lower then. So monitoring of CPU frequency and speed stepping is not possible unless a new version of `Intel Power Gadget` will be released.
 
-**AppleALC**
-
-The `Audio Codec` of ASUS PRIME Z590-P is [Realtek ALC897](https://www.asus.com/de/Motherboards-Components/Motherboards/PRIME/PRIME-Z590-P/techspec/). Although it's listed on `AppleALC` [Supported Codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs), none of the possible layout-ids (12, 23, 66, 69) worked. The device is recognized (with different outputs for each layout), but no audio output was possible.
-
 ---
 
 ### Credits
@@ -450,6 +460,7 @@ This Hackintosh was build with help of the following repositories and guides:
 | F1 Boot Error and BIOS           | [jergoo/Hackintosh-ROG-STRIX-Z490I](https://github.com/jergoo/Hackintosh-ROG-STRIX-Z490I#f1-boot-error)                       |
 | OpenCore Config and Installation | [OpenCore Install Guide - Desktop Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html) |
 | Installing VoodooHDA             | [yahgoo/installVoodooHDA4BSnMont](https://github.com/yahgoo/installVoodooHDA4BSnMont)                                         |
+| Layout for AppleALC              | Mikaël G.                                                                                                                     |
 
 #### Links and Documentation
 
