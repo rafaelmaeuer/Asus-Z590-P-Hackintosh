@@ -81,10 +81,12 @@
 - [acidanthera/WhateverGreen - DRM Compatibility Chart for 10.15](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.Chart.md)
 
 **RCT / F1 Error**
+
 - [System has posted in safe mode Asus Prime-Z 390a](https://www.hackintosh-forum.de/forum/thread/42159-10-14-4-system-has-posted-in-safe-mode-asus-prime-z-390-a/)
 - [System has POSTed in safe mode - asus-rog-strix-z390-i-gaming](https://github.com/czombos/asus-rog-strix-z390-i-gaming-hackintosh/issues/18#issuecomment-619604508)
 - [10.14.4 System has posted in safe mode - tonymacx86.com](https://www.tonymacx86.com/threads/10-14-4-system-has-posted-in-safe-mode.274093)
 - [AppleRTC Patch für ASUS Z390 Board nach Update auf 10.15.4](https://www.hackintosh-forum.de/forum/thread/47675-applertc-patch-f%C3%BCr-asus-z390-board-nach-update-auf-10-15-4-nicht-mehr-funktionsf/)
+- [Random wakeups - Disable RTC wake scheduling](https://www.reddit.com/r/hackintosh/comments/m1o3wq/random_wakeups/gqfzudo/?utm_source=share&utm_medium=web2x&context=3)
 
 **Darkwake**
 
