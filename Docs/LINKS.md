@@ -20,6 +20,7 @@
 - [LiLu & Plugins mit Bootflags und Beispielen](https://www.hackintosh-forum.de/forum/thread/32411-lilu-plugins-mit-bootflags-und-beispielen/)
 - [How to change default boot option for OpenCore](https://www.reddit.com/r/hackintosh/comments/dze9kw/how_to_change_default_boot_option_for_opencore/)
 - [Hide partitions from OpenCore boot screen (OpenCanopy)](https://www.reddit.com/r/hackintosh/comments/h0jkjl/hide_partitions_from_opencore_boot_screen/)
+- [OpenCore post-install MacOS decluterring](https://www.reddit.com/r/hackintosh/comments/prnkkw/opencore_postinstall_macos_decluterring_removing/)
 
 **Installation**
 
