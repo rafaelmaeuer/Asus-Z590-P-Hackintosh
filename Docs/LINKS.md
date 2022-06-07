@@ -86,6 +86,11 @@
 - [10.14.4 System has posted in safe mode - tonymacx86.com](https://www.tonymacx86.com/threads/10-14-4-system-has-posted-in-safe-mode.274093)
 - [AppleRTC Patch für ASUS Z390 Board nach Update auf 10.15.4](https://www.hackintosh-forum.de/forum/thread/47675-applertc-patch-f%C3%BCr-asus-z390-board-nach-update-auf-10-15-4-nicht-mehr-funktionsf/)
 
+**Darkwake**
+
+- [Der Darkwake - Dein unbekannter Feind](https://www.hackintosh-forum.de/forum/thread/53511-der-darkwake-dein-unbekannter-feind/)
+- [OpenCore Post-Install - Keyboard Wake Issues](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended)
+
 **Intel Power Gadget**
 
 - [System crash with Intel Power Gadget & iStats Menu](https://www.reddit.com/r/hackintosh/comments/hoe2am/system_crash_with_intel_power_gadget_istats_menu/)

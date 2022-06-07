@@ -206,6 +206,17 @@ To create a working macOS Installer boot drive, you will need the following:
 
 - Use [SilentKnight](https://eclecticlight.co/lockrattler-systhist/) to check security state and update missing software or tools.
 
+**e) Power-Nap**
+
+- To disable Power Nap, uncheck `Activate Power Nap` in System Settings -> Energy Saving
+- Disable WakeUp for Maintenance with
+
+      sudo pmset -a ttyskeepawake 0
+
+- Check Darkwake count with (should be 0)
+
+      pmset -g stats
+
 ---
 
 ### Update macOS
@@ -361,6 +372,13 @@ sudo pmset tcpkeepalive 0
 
 It seems that with Monterey 12.0.1 there are still [issues](https://github.com/acidanthera/bugtracker/issues/1821) with Bluetooth. You can try to enable the `ExtendBTFeatureFlags` Quirk, but otherwise we need to [wait](https://www.tonymacx86.com/threads/bluetooth-doesnt-work-after-wake-on-monterey.315679/#post-2284467) for an update that fixes it.
 
+**Keyboard / Wake**
+
+To fix an odd bug with Intel's 100 series chipsets and newer is that sometimes macOS requires a second keyboard press or some other wake event to power up the monitor as well. This is solved with [Create a fake ACPI Device](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-2-create-a-fake-acpi-device) which requires to add:
+
+- USBWakeFixup.kext
+- SSDT-USBW.aml
+
 **Card Reader**
 
 The generic Card-Reader doesn't show up in system preferences by default. Use [Generic Card Reader Driver Friend](https://github.com/0xFireWolf/GenericCardReaderFriend) to display some information. Follow this [guide](https://github.com/0xFireWolf/GenericCardReaderFriend/blob/main/FAQ.md) to find the correct `Product ID` and `Vendor ID` that needs to be set in the kexts `info.plist`.
@@ -403,6 +421,7 @@ VoodooHDA is also working (requires harder setup) and can be used for advanced a
 | CPU Temp     | XHCI-unsupported.kext                                        | 0.9.2            | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext)                   |
 | Card Reader  | GenericCardReaderFriend.kext                                 | 1.0.1            | [0xFireWolf/GenericCardReaderFriend](https://github.com/0xFireWolf/GenericCardReaderFriend)                                         |
 | (USB Map     | USBInjectAll.kext                                            | 0.7.6            | [Sniki/OS-X-USB-Inject-All](https://github.com/Sniki/OS-X-USB-Inject-All))                                                          |
+| USB Wake     | USBWakeFixup.kext                                            | 1.0              | [osy/USBWakeFixup](https://github.com/osy/USBWakeFixup)                                                                             |
 
 *\*Kext needs special setup, see [Docs/AUDIO.md](Docs/AUDIO.md)*
 
