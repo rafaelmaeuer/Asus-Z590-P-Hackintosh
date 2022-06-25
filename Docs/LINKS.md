@@ -63,8 +63,10 @@
 **Bluetooth**
 
 - [Bluetooth doesn't work after wake on Monterey](https://www.tonymacx86.com/threads/bluetooth-doesnt-work-after-wake-on-monterey.315679)
+- [Monterey Bluetooth after wake](https://www.tonymacx86.com/threads/monterey-bluetooth-after-wake.317711/)
+- [Script Restarts Bluetooth Module on Mac OS X](https://gist.github.com/ralph089/a65840c4f5e439b90170d735a89a863f)
 - [BlueToolFixup has known issues with beta 5+](https://github.com/acidanthera/bugtracker/issues/1821)
-- [CpuTscSync.kext and Unlock with AppleWach and bluetoothd crash](https://github.com/acidanthera/bugtracker/issues/1833)
+- [CpuTscSync.kext and Unlock with AppleWatch and bluetoothd crash](https://github.com/acidanthera/bugtracker/issues/1833)
 - [Fenvi Wi-Fi Card and Bluetooth / USB Header](https://forums.macrumors.com/threads/fenvi-wi-fi-card-and-bluetooth-usb-header.2235776/)
 - [Catalina no Bluetooth with Fenvi FV-T919. WiFi is working.](https://www.tonymacx86.com/threads/catalina-no-bluetooth-with-fenvi-fv-t919-wifi-is-working.284723/)
 
