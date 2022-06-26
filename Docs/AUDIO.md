@@ -100,6 +100,5 @@ Guide created with [yahgoo/installVoodooHDA4BSnMont](https://github.com/yahgoo/i
 
 - [(Snapshot sealed: broken) Reparatur Möglichkeit](https://www.hackintosh-forum.de/forum/thread/53293-snapshot-sealed-broken-reparatur-m%C3%B6glichkeit/?postID=686967#post686967)
 - [Big Sur’s Signed System Volume: added security protection](https://eclecticlight.co/2020/06/25/big-surs-signed-system-volume-added-security-protection/)
-- [Why you can’t make a snapshot of Big Sur’s System volume to roll back
-](https://eclecticlight.co/2021/06/11/why-you-cant-make-a-snapshot-of-big-surs-system-volume-to-roll-back/)
+- [Why you can’t make a snapshot of Big Sur’s System volume to roll back](https://eclecticlight.co/2021/06/11/why-you-cant-make-a-snapshot-of-big-surs-system-volume-to-roll-back/)
 - [OpenCore and macOS 11: Big Sur - Broken Seal](https://dortania.github.io/OpenCore-Install-Guide/extras/big-sur/#broken-seal)
