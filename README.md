@@ -94,8 +94,8 @@ Blackmagic Disk Speed of Samsung Pro 980 NVMe SSD
 
 - Follow this guide [OpenCore-Install-Guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/)
   - Basically the files mentioned in [file-swaps](https://dortania.github.io/OpenCore-Install-Guide/troubleshooting/debug.html#file-swaps) need to be copied/updated
-    - Copy `OpenCanopy.efi` to `EFI/OC/Drivers` for GUI picker
-    - Copy `OpenHfsPlus.efi` to `EFI/OC/Drivers` for HFS+ support
+    - Add `OpenCanopy.efi` to `EFI/OC/Drivers` for GUI picker
+    - Add `OpenHfsPlus.efi` to `EFI/OC/Drivers` for HFS+ support
   - Repeat this step when switching from `debug` to `release` version
 
 **c) Add Config and Kexts**
@@ -177,8 +177,7 @@ To create a working macOS Installer boot drive, you will need the following:
 - ⚠️ Connect macOS Installer to **USB2** port ⚠️
 - Boot from OpenCore Drive (`F8` on BIOS post -> `[UEFI] OpenCore Drive`)
 - Select macOS Installer (`Install macOS Monterey`)
-- Begin installation on APFS formatted HDD/SSD
-- On reboots select `(Install) Monterey` drive (auto)
+- Begin installation on APFS formatted SSD
 - Finish the onboarding macOS setup process
 
 ---
@@ -214,40 +213,46 @@ To create a working macOS Installer boot drive, you will need the following:
 
 ### Update macOS
 
-- Make a full backup with `Time Machine` or similar software
-- Check the official update-guide: [OpenCore-Post-Install/update](https://dortania.github.io/OpenCore-Post-Install/universal/update.html)
-- Download latest version of OpenCore
-- Download updates for all installed kexts
-- Update OpenCore Drive for testing purpose
-  - Use latest OpenCore, kexts and drivers
-- Boot from OpenCore Drive
-- If the system boots
-  - Mount EFI partition of macOS HDD
-  - Replace EFI from OpenCore Drive
-- If the system boots
-  - Start macOS Update from `System Settings` -> `Software Update`
-  - With OpenCore the update process should work automatically
-    - If `Software Update` shows `Mac version is up to date`, download macOS Installer from AppStore and initialize the update manually
-- If system doesn't boot on one of these steps
-  - Try to fix the problem or revert to the latest backup
+Check the official update-guide: [OpenCore-Post-Install/update](https://dortania.github.io/OpenCore-Post-Install/universal/update.html)
+
+1. Backup
+   - Full system backup with `Time Machine` or similar software
+   - Copy current EFI to OpenCore USB-Drive for recovery purpose
+2. Download
+   - Latest version of OpenCore and replace files in EFI
+   - Updates for all installed kexts and replace in EFI
+3. Reboot
+   - Boot with updated OpenCore version and kexts
+   - If the system doesn't boot, use OpenCore USB-Drive to roll back
+4. Update
+   - Start macOS Update from `System Settings` -> `Software Update`
+   - With OpenCore the update process should work automatically
+   - If `Software Update` shows `Mac version is up to date`, download macOS Installer from AppStore and start the update manually
+
+If the system doesn't boot, try to fix the problem or revert to the latest EFI or system-backup.
 
 ---
 
 ### DualBoot Windows
 
-- Create new partition (~106 GB min) with `disk utility`
-- Create a Windows 11 Installer with [Rufus](https://rufus.ie/) (TPM 2.0 + Secure-Boot)
-- Select `Windows` boot entry in OpenCanopy to begin installation
-- Delete the partition from installer and let Windows re-create it
-- Use the `Z590-P Driver-DVD` to install all missing drivers
-- Unzip drivers in [Windows/Driver](Windows/Driver/) folder and install manually from Device-Manager (`Broadcom BT/WiFi` and `Marvel Console`)
-- For Magic Mouse scrolling install `AppleWirelessMouse64.exe` from [Windows/Mouse](Windows/Mouse/) folder
-- For Scroll-Inversion follow the instructions from [windowscentral.com](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
-- For Keyboard remapping use [AutoHotkey](https://www.autohotkey.com/) and [SharpKeys](https://github.com/randyrants/sharpkeys) with proper config files from [Windows/Keyboard](Windows/Keyboard/) folder
-- Fix incorrect clock settings by instructions from [lifehacker.com](https://lifehacker.com/fix-incorrect-clock-settings-in-windows-when-dual-booti-5742148)
-- Currently there are two concurrent problems:
-  - Don't install BT-Driver in Windows: Mouse works on both OS while restart, but no Scroll in Windows
-  - Install BT-Driver in Windows: Scrolling in Windows works, but restart breaks connection for other OS
+1. Install
+   - Create new partition (~106 GB min) with `disk utility`
+   - Create a Windows 11 Installer with [Rufus](https://rufus.ie/) (TPM 2.0 + Secure-Boot)
+   - Select `Windows` boot entry in OpenCanopy to begin installation
+   - Delete the partition from installer and let Windows re-create it
+
+2. Drivers
+   - Use the `Z590-P Driver-DVD` to install all missing drivers
+   - Unzip drivers in [Windows/Driver](Windows/Driver/) folder and install manually from Device-Manager (`Broadcom BT/WiFi` and `Marvel Console`)
+   - For Magic Mouse scrolling install `AppleWirelessMouse64.exe` from [Windows/Mouse](Windows/Mouse/) folder
+
+3. Fixes
+   - For Scroll-Inversion follow the instructions from [windowscentral.com](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
+   - For Keyboard remapping use [AutoHotkey](https://www.autohotkey.com/) and [SharpKeys](https://github.com/randyrants/sharpkeys) with proper config files from [Windows/Keyboard](Windows/Keyboard/) folder
+   - Fix incorrect clock settings by instructions from [lifehacker.com](https://lifehacker.com/fix-incorrect-clock-settings-in-windows-when-dual-booti-5742148)
+   - Currently there are two concurrent problems:
+     - Don't install BT-Driver in Windows: Mouse works on both OS while restart, but no Scroll in Windows
+     - Install BT-Driver in Windows: Scrolling in Windows works, but restart breaks connection for other OS
 
 ---
 
@@ -359,7 +364,7 @@ It can happen that the system is waking up unwanted from sleep (e.g. darkwake wi
 pmset -g stats
 ```
 
-For a list of know issues and fixes see [Docs/SLEEP.md](Docs/SLEEP.md).
+For a list of know issues and possible fixes see [Docs/SLEEP.md](Docs/SLEEP.md).
 
 **Card Reader**
 
@@ -383,7 +388,7 @@ The `Audio Codec` of ASUS PRIME Z590-P is [Realtek ALC897](https://www.asus.com/
 
 VoodooHDA is also working (requires harder setup) and can be used for advanced audio configuration.
 
-- For VoodooHDA disable `AppleHDA.kext` and `alcid=11` bootflag and follow [Docs/AUDIO.md](Docs/AUDIO.md)
+- For VoodooHDA disable `AppleHDA.kext`, remove `alcid=11` bootflag and follow [Docs/AUDIO.md](Docs/AUDIO.md)
 
 *Note: Every macOS updates requires VoodooHDA to be re-installed again!*
 
