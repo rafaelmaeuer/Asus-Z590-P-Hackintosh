@@ -95,6 +95,7 @@ Documentation of Links used while creating ASUS PRIME Z590-P Hackintosh.
 - [OpenCore Post-Install - Keyboard Wake Issues](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-1-add-wake-type-property-recommended)
 - [Monterey Bluetooth after wake](https://www.tonymacx86.com/threads/monterey-bluetooth-after-wake.317711/)
 - [Script Restarts Bluetooth Module on Mac OS X](https://gist.github.com/ralph089/a65840c4f5e439b90170d735a89a863f)
+- [bb's Homepage - SleepWatcher](https://www.bernhard-baehr.de/)
 
 ## Intel Power Gadget
 

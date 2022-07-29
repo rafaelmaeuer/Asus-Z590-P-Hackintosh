@@ -28,6 +28,8 @@ If there are entries with `RTC (Alarm)` or `RTC/Maintenance`, disable RTC wake s
 | ------------------------- | --------------------------- | ---- | ------- | ----- | ------- |
 | com.apple.driver.AppleRTC | Disable RTC wake scheduling |      | C3      | 1     | &#9745; |
 
+*Note: Another fix might be to add the `darkwake=3` bootflag.*
+
 ## Wake by Bluetooth
 
 The internal USB2-ports share the same hub and are used for I/O-Panel and Card-Reader connectors. Therefore an [USB3 to USB2 internal Adapter](https://www.amazon.com/SIENOC-Female-Motherboard-Housing-Adapter/dp/B00EOI3VC8) is used for the Bluetooth-USB connector. [Fixing Sleep Preparations](https://dortania.github.io/OpenCore-Post-Install/universal/sleep.html#preparations) help to fix some connection loss after sleep:

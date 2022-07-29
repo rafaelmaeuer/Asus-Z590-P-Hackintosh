@@ -935,7 +935,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>alcid=11</string>
+				<string>darkwake=3 alcid=11</string>
 				<key>csr-active-config</key>
 				<string>0x0285</string>
 				<key>prev-lang:kbd</key>
