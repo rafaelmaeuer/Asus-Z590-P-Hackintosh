@@ -1,4 +1,4 @@
-# Sleep with Z590-P Hackintosh
+# Sleep with Z590-P
 
 List of known wake/sleep related issues and possible solutions or fixes.
 
