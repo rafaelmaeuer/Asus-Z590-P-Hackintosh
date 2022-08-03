@@ -28,7 +28,7 @@ If there are entries with `RTC (Alarm)` or `RTC/Maintenance`, disable RTC wake s
 | ------------------------- | --------------------------- | ---- | ------- | ----- | ------- |
 | com.apple.driver.AppleRTC | Disable RTC wake scheduling |      | C3      | 1     | &#9745; |
 
-*Note: Another fix might be to add the `darkwake=3` bootflag.*
+*Note: Another fix might be to add the `darkwake=0` bootflag.*
 
 ## Wake by Bluetooth
 
