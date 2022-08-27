@@ -8,7 +8,7 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 
 This Hackintosh was created with help of some motivating projects like [SchmockLord/Gigabyte-Z590i-Vision-D-11900k](https://github.com/SchmockLord/Gigabyte-Z590i-Vision-D-11900k) and the OpenCore guide [Desktop Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html) as base.
 
-- macOS: [Monterey 12.5](https://support.apple.com/en-us/HT212585)
+- macOS: [Monterey 12.5.1](https://support.apple.com/en-us/HT212585)
 - bootloader: [OpenCore 0.8.3](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.8.3)
 
 <a href="https://www.buymeacoffee.com/rafaelmaeuer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕️&slug=rafaelmaeuer&button_colour=F2F2F2&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
@@ -284,7 +284,7 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 | ~~Intel Power Gadget~~ | 3.7.0*  🚨 | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
 | IORegistryExplorer     | 2.1       | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
 | MaciASL                | 1.6.2     | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
-| OpenCore Configurator  | 2.61.2.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
+| OpenCore Configurator  | 2.62.0.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
 | USBMap                 | -         | [corpnewt/USBMap](https://github.com/corpnewt/USBMap)                                                       |
 
 *\*This version causes kernel panic after sleep on iMacPro1,1 SMBIOS*
