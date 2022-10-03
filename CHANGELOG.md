@@ -5,6 +5,7 @@
 ## [1.1.8] - 2022-10-03
 
 - update open-core to `v0.8.4`
+- update open-core configurator
 
 ## [1.1.7] - 2022-08-27
 
