@@ -4,6 +4,7 @@
 
 ## [1.1.8] - 2022-10-03
 
+- update macOS `v12.6`
 - update open-core to `v0.8.4`
 - update open-core configurator
 
