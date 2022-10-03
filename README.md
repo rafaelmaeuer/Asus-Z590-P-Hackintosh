@@ -259,7 +259,7 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 
 | Type            | Kext                                                         | Version          | Author                                                                                                                              |
 | --------------- | ------------------------------------------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Audio           | AppleALC /<br> VodooHDA.kext*                                | 1.7.4 <br> 2.9.9 | [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC) <br> [sourceforge.net](https://sourceforge.net/projects/voodoohda/) |
+| Audio           | AppleALC /<br> VodooHDA.kext*                                | 1.7.5 <br> 2.9.9 | [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC) <br> [sourceforge.net](https://sourceforge.net/projects/voodoohda/) |
 | Card Reader     | GenericCardReaderFriend.kext                                 | 1.0.1            | [0xFireWolf/GenericCardReaderFriend](https://github.com/0xFireWolf/GenericCardReaderFriend)                                         |
 | CMOS Memory     | RTCMemoryFixup.kext                                          | 1.0.7            | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)                                                         |
 | CPU Temp        | XHCI-unsupported.kext                                        | 0.9.2            | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext)                   |
