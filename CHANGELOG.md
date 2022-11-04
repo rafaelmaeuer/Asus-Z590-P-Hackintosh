@@ -2,6 +2,14 @@
 
 ## macOS Monterey
 
+## [1.1.9] - 2022-11-04
+
+- update macOS `v12.6.1`
+- update open-core to `v0.8.5`
+- update open-core configurator
+- update gpu to pulse rx580
+- update bios to `v1601`
+
 ## [1.1.8] - 2022-10-03
 
 - update macOS `v12.6`

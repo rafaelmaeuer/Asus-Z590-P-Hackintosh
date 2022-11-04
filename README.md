@@ -8,8 +8,8 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 
 This Hackintosh was created with help of some motivating projects like [SchmockLord/Gigabyte-Z590i-Vision-D-11900k](https://github.com/SchmockLord/Gigabyte-Z590i-Vision-D-11900k) and the OpenCore guide [Desktop Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html) as base.
 
-- macOS: [Monterey 12.6](https://support.apple.com/en-us/HT212585)
-- bootloader: [OpenCore 0.8.4](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.8.4)
+- macOS: [Monterey 12.6.1](https://support.apple.com/en-us/HT212585)
+- bootloader: [OpenCore 0.8.5](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.8.5)
 
 <a href="https://www.buymeacoffee.com/rafaelmaeuer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕️&slug=rafaelmaeuer&button_colour=F2F2F2&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
 
@@ -46,7 +46,7 @@ This Hackintosh was created with help of some motivating projects like [SchmockL
 | Processor    | Intel Core i7 11700K   | [ark.intel.com](https://ark.intel.com/content/www/us/en/ark/products/212047/intel-core-i711700k-processor-16m-cache-up-to-5-00-ghz.html) |
 | DDR4 RAM     | Crucial Ballistix 32GB | [www.crucial.com](https://www.crucial.com/memory/ddr4/bl2k16g32c16u4b)                                                                   |
 | NVMe SSD     | Samsung 980 Pro 1TB    | [www.samsung.com](https://www.samsung.com/us/computing/memory-storage/solid-state-drives/980-pro-pcie-4-0-nvme-ssd-1tb-mz-v8p1t0b-am/)   |
-| Graphics     | ROG Strix RX570 4G     | [rog.asus.com](https://rog.asus.com/graphics-cards/graphics-cards/rog-strix/rog-strix-rx570-o4g-gaming-model/)                           |
+| Graphics     | ROG Strix RX570 4G <br> PULSE RX 580 8GB | [rog.asus.com](https://rog.asus.com/graphics-cards/graphics-cards/rog-strix/rog-strix-rx570-o4g-gaming-model/) <br> [sapphiretech.com](https://www.sapphiretech.com/de-de/consumer/pulse-rx-580-8g-g5)                           |
 | WiFi / BT    | Fenvi FV T919 PCI-E    | [www.fenvi.com](https://www.fenvi.com/product_detail_16.html)                                                                            |
 | SATA / eSata | DIGITUS DS-30104-1     | [www.digitus.info](https://www.digitus.info/de/produkte/computer-und-office-zubehoer/computer-zubehoer/io-karten/ds-30104-1/?PL=en)      |
 
@@ -108,13 +108,21 @@ To create a working macOS Installer-Drive, you need the following:
 
 #### 2. BIOS Settings
 
-- Update to version 1017 (firmware in [BIOS](/BIOS) folder)
+- Update to version 1601 (firmware in [BIOS](/BIOS) folder)
 - Use following BIOS settings (DEL/F2 on boot):
+
+  EZ-Mode
+  
+  ```sh
+  EZ System Tuning
+    - ASUS Extreme Tuning
+  ```
+
+  Advanced Mode (F7)
 
   ```sh
   Ai Tweaker
     - Ai Overclock Tuner: XMP I
-    - OC Tuner: OC Tuner II
   Advanced
     - CPU Configuration
       - Intel (VMX) Virtualization Technology: Enabled
@@ -142,6 +150,11 @@ To create a working macOS Installer-Drive, you need the following:
         - Clear Secure Boot Keys: Execute
     - Boot Configuration
       - Fast Boot: Disabled
+      - POST Delay Time: 0 sec
+      - Wait For 'F1' If Error: Disabled
+  Tool
+    - ASUS Armoury Crate
+      - Download & Install ARMOURY CRATE app: Disabled
   ```
 
 ---
@@ -284,7 +297,7 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 | ~~Intel Power Gadget~~ | 3.7.0*  🚨 | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
 | IORegistryExplorer     | 2.1       | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
 | MaciASL                | 1.6.2     | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
-| OpenCore Configurator  | 2.62.1.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
+| OpenCore Configurator  | 2.63.0.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
 | USBMap                 | -         | [corpnewt/USBMap](https://github.com/corpnewt/USBMap)                                                       |
 
 *\*This version causes kernel panic after sleep on iMacPro1,1 SMBIOS*
