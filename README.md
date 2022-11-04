@@ -55,8 +55,8 @@ This Hackintosh was created with help of some motivating projects like [SchmockL
 Geekbench 5 Score of Intel Core i7 11700K CPU
 ![i7 11700K CPU Score](Images/cpu-score.png)
 
-Geekbench 5 Score (Metal) of Radeon RX 570 GPU
-![RX 570 GPU Score](Images/gpu-score.png)
+Geekbench 5 Score (Metal) of Radeon RX 580 GPU
+![RX 580 GPU Score](Images/rx580-score.png)
 
 Blackmagic Disk Speed of Samsung Pro 980 NVMe SSD
 ![NVMe Pro 980 Speed](Images/disk-speed.png)
