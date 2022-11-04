@@ -108,13 +108,21 @@ To create a working macOS Installer-Drive, you need the following:
 
 #### 2. BIOS Settings
 
-- Update to version 1017 (firmware in [BIOS](/BIOS) folder)
+- Update to version 1601 (firmware in [BIOS](/BIOS) folder)
 - Use following BIOS settings (DEL/F2 on boot):
+
+  EZ-Mode
+  
+  ```sh
+  EZ System Tuning
+    - ASUS Extreme Tuning
+  ```
+
+  Advanced Mode (F7)
 
   ```sh
   Ai Tweaker
     - Ai Overclock Tuner: XMP I
-    - OC Tuner: OC Tuner II
   Advanced
     - CPU Configuration
       - Intel (VMX) Virtualization Technology: Enabled
@@ -142,6 +150,11 @@ To create a working macOS Installer-Drive, you need the following:
         - Clear Secure Boot Keys: Execute
     - Boot Configuration
       - Fast Boot: Disabled
+      - POST Delay Time: 0 sec
+      - Wait For 'F1' If Error: Disabled
+  Tool
+    - ASUS Armoury Crate
+      - Download & Install ARMOURY CRATE app: Disabled
   ```
 
 ---
