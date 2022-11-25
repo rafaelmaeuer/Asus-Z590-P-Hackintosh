@@ -132,3 +132,17 @@ Documentation of Links used while creating ASUS PRIME Z590-P Hackintosh.
 - [How to reverse mouse and touchpad scrolling direction on Windows 10](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
 - [Wie deaktiviere ich das automatische Herunterladen von Armoury Crate im BIOS?](https://www.asus.com/de/support/FAQ/1043788/)
 - [Fix Incorrect Clock Settings in Windows When Dual-Booting with OS X or Linux](https://lifehacker.com/fix-incorrect-clock-settings-in-windows-when-dual-booti-5742148)
+
+## Color with HDMI
+
+- [Fix 4K Monitor Colors on MacOS Big Sur](https://gerson23.github.io/macos/2021/06/08/fix-4k-monitor-macos.html)
+- [Force RGB mode in Mac OS X to fix the picture quality of an external monitor](https://www.mathewinkson.com/2013/03/force-rgb-mode-in-mac-os-x-to-fix-the-picture-quality-of-an-external-monitor)
+- [EDID overrides for Mac OS X](https://github.com/mbruggmann/osx-edid-overrides)
+
+## Black Screen Issue
+
+- [B550 Torpedo + RX580 no image/black screen](https://community.amd.com/t5/processors/b550-torpedo-rx580-no-image-black-screen/m-p/521635#M46503)
+
+## Wake by Focus
+
+- [macOS Monterey: Mac wakes up every time I change focus setting on iPhone](https://www.reddit.com/r/MacOS/comments/qqhoqy/macos_monterey_mac_wakes_up_every_time_i_change/)
