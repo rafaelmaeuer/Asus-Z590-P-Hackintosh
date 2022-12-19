@@ -2,6 +2,12 @@
 
 ## macOS Monterey
 
+## [1.1.10] - 2022-12-17
+
+- update macOS `v12.6.2`
+- update open-core to `v0.8.7`
+- update kexts and tools
+
 ## [1.1.9] - 2022-11-04
 
 - update macOS `v12.6.1`
