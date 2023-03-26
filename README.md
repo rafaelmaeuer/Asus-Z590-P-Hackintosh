@@ -307,7 +307,7 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 
 #### Troubleshooting
 
-For a list of tips and tricks for already known problems see [docs/TROUBLE](docs/TROUBLE.md).
+For a list of tips and tricks for already known problems see [Docs/TROUBLE](Docs/TROUBLE.md).
 
 ---
 
