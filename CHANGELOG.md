@@ -5,6 +5,7 @@
 ## [1.1.11] - 2023-03-27
 
 - chore: update open-core to `v0.9.0`
+- chore: update kexts and tools
 
 ## [1.1.10] - 2022-12-17
 
