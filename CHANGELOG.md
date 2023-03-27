@@ -2,6 +2,10 @@
 
 ## macOS Monterey
 
+## [1.1.11] - 2023-03-27
+
+- chore: update open-core to `v0.9.0`
+
 ## [1.1.10] - 2022-12-17
 
 - update macOS `v12.6.2`
