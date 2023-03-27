@@ -8,8 +8,8 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 
 This Hackintosh was created with help of some motivating projects like [SchmockLord/Gigabyte-Z590i-Vision-D-11900k](https://github.com/SchmockLord/Gigabyte-Z590i-Vision-D-11900k) and the OpenCore guide [Desktop Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html) as base.
 
-- macOS: [Monterey 12.6.2](https://support.apple.com/en-us/HT212585)
-- bootloader: [OpenCore 0.8.7](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.8.7)
+- macOS: [Monterey 12.6.3](https://support.apple.com/en-us/HT212585)
+- bootloader: [OpenCore 0.9.0](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.9.0)
   - [Configuration](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf) and [Differences](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Differences/Differences.pdf)
 
 <a href="https://www.buymeacoffee.com/rafaelmaeuer"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕️&slug=rafaelmaeuer&button_colour=F2F2F2&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=FFDD00"></a>
@@ -273,15 +273,15 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 
 | Type            | Kext                                                         | Version          | Author                                                                                                                              |
 | --------------- | ------------------------------------------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Audio           | AppleALC /<br> VodooHDA.kext*                                | 1.7.7 <br> 2.9.9 | [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC) <br> [sourceforge.net](https://sourceforge.net/projects/voodoohda/) |
+| Audio           | AppleALC /<br> VodooHDA.kext*                                | 1.8.0 <br> 2.9.9 | [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC) <br> [sourceforge.net](https://sourceforge.net/projects/voodoohda/) |
 | Card Reader     | GenericCardReaderFriend.kext                                 | 1.0.4            | [0xFireWolf/GenericCardReaderFriend](https://github.com/0xFireWolf/GenericCardReaderFriend)                                         |
 | CMOS Memory     | RTCMemoryFixup.kext                                          | 1.0.7            | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)                                                         |
 | CPU Temp        | XHCI-unsupported.kext                                        | 0.9.2            | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext)                   |
 | Ethernet        | LucyRTL8125Ethernet.kext                                     | 1.1.0            | [Mieze/LucyRTL8125Ethernet](https://github.com/Mieze/LucyRTL8125Ethernet)                                                           |
-| Graphics        | WhateverGreen.kext                                           | 1.6.2            | [acidanthera/WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                                           |
+| Graphics        | WhateverGreen.kext                                           | 1.6.4            | [acidanthera/WhateverGreen](https://github.com/acidanthera/WhateverGreen)                                                           |
 | NVMe SSD        | NVMeFix.kext                                                 | 1.1.0            | [acidanthera/NVMeFix](https://github.com/acidanthera/NVMeFix)                                                                       |
-| Patch Engine    | Lilu.kext                                                    | 1.6.2            | [acidanthera/Lilu](https://github.com/acidanthera/Lilu)                                                                             |
-| Sensors         | VirtualSMC.kext <br> SMCSuperIO.kext <br>  SMCProcessor.kext | 1.3.0            | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                                 |
+| Patch Engine    | Lilu.kext                                                    | 1.6.4            | [acidanthera/Lilu](https://github.com/acidanthera/Lilu)                                                                             |
+| Sensors         | VirtualSMC.kext <br> SMCSuperIO.kext <br>  SMCProcessor.kext | 1.3.1            | [acidanthera/VirtualSMC](https://github.com/acidanthera/VirtualSMC)                                                                 |
 | USB Map         | USBMap.kext                                                  | 1.0              | [rafaelmaeuer/Z590-P/USB](https://github.com/rafaelmaeuer/Asus-Z590-P-Hackintosh/tree/master/USB/Results/USBMap.kext)               |
 | (USB Map Helper | USBInjectAll.kext                                            | 0.7.6            | [Sniki/OS-X-USB-Inject-All](https://github.com/Sniki/OS-X-USB-Inject-All))                                                          |
 | USB Wake        | USBWakeFixup.kext                                            | 1.0              | [osy/USBWakeFixup](https://github.com/osy/USBWakeFixup)                                                                             |
@@ -298,7 +298,7 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 | ~~Intel Power Gadget~~ | 3.7.0*  🚨 | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
 | IORegistryExplorer     | 2.1       | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
 | MaciASL                | 1.6.2     | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
-| OpenCore Configurator  | 2.65.0.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
+| OpenCore Configurator  | 2.67.1.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
 | USBMap                 | -         | [corpnewt/USBMap](https://github.com/corpnewt/USBMap)                                                       |
 
 *\*This version causes kernel panic after sleep on iMacPro1,1 SMBIOS*
@@ -307,7 +307,7 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 
 #### Troubleshooting
 
-For a list of tips and tricks for already known problems see [docs/TROUBLE](docs/TROUBLE.md).
+For a list of tips and tricks for already known problems see [Docs/TROUBLE](Docs/TROUBLE.md).
 
 ---
 
