@@ -6,6 +6,7 @@
 
 - chore: update open-core to `v0.9.0`
 - chore: update kexts and tools
+- fix: csr-active-config
 
 ## [1.1.10] - 2022-12-17
 
