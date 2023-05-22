@@ -2,6 +2,12 @@
 
 ## macOS Monterey
 
+## [1.1.12] - 2023-05-21
+
+- chore: update macOS `v12.6.6`
+- chore: update open-core to `v0.9.2`
+- chore: update kexts and tools
+
 ## [1.1.11] - 2023-03-27
 
 - chore: update macOS `v12.6.3`
