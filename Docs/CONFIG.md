@@ -20,6 +20,8 @@ In OpenCore Configurator go to `Misc` -> `Security` and set
 | DmgLoading      | `Signed`                          |
 | SecureBootModel | `j137 iMacPro1,1 (December 2017)` |
 
+*Note: this will noticeable slow down initial startup time after login*
+
 ## USB Mapping
 
 An USB port-mapping can be created with [OpenCore Post-Install - USB Mapping](https://dortania.github.io/OpenCore-Post-Install/usb/intel-mapping/intel.html) guide and [corpnewt/USBMap](https://github.com/corpnewt/USBMap) tool.
