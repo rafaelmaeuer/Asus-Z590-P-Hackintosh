@@ -8,7 +8,7 @@ Install macOS Monterey on ASUS PRIME Z590-P Gaming Mainboard with 11th Gen Intel
 
 This Hackintosh was created with help of some motivating projects like [SchmockLord/Gigabyte-Z590i-Vision-D-11900k](https://github.com/SchmockLord/Gigabyte-Z590i-Vision-D-11900k) and the OpenCore guide [Desktop Comet Lake](https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html) as base.
 
-- macOS: [Monterey 12.6.6](https://support.apple.com/en-us/HT212585)
+- macOS: [Monterey 12.6.8](https://support.apple.com/en-us/HT212585)
 - bootloader: [OpenCore 0.9.4](https://github.com/acidanthera/OpenCorePkg/releases/tag/0.9.4)
   - [Configuration](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Configuration.pdf) and [Differences](https://github.com/acidanthera/OpenCorePkg/blob/master/Docs/Differences/Differences.pdf)
 
