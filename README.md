@@ -273,7 +273,7 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 
 | Type            | Kext                                                         | Version          | Author                                                                                                                              |
 | --------------- | ------------------------------------------------------------ | ---------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
-| Audio           | AppleALC /<br> VodooHDA.kext*                                | 1.8.4 <br> 2.9.9 | [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC) <br> [sourceforge.net](https://sourceforge.net/projects/voodoohda/) |
+| Audio           | AppleALC /<br> VodooHDA.kext*                                | 1.8.7 <br> 2.9.9 | [acidanthera/AppleALC](https://github.com/acidanthera/AppleALC) <br> [sourceforge.net](https://sourceforge.net/projects/voodoohda/) |
 | Card Reader     | GenericCardReaderFriend.kext                                 | 1.0.4            | [0xFireWolf/GenericCardReaderFriend](https://github.com/0xFireWolf/GenericCardReaderFriend)                                         |
 | CMOS Memory     | RTCMemoryFixup.kext                                          | 1.0.7            | [acidanthera/RTCMemoryFixup](https://github.com/acidanthera/RTCMemoryFixup)                                                         |
 | CPU Temp        | XHCI-unsupported.kext                                        | 0.9.2            | [RehabMan/OS-X-USB-Inject-All](https://github.com/RehabMan/OS-X-USB-Inject-All/tree/master/XHCI-unsupported.kext)                   |
@@ -294,11 +294,11 @@ Several SSDT patches are [recommended](https://dortania.github.io/Getting-Starte
 
 | Name                   | Version   | Download                                                                                                    |
 | ---------------------- | --------- | ----------------------------------------------------------------------------------------------------------- |
-| Hackintool             | 3.9.8     | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
+| Hackintool             | 4.0.3     | [headkaze/Hackintool](https://github.com/headkaze/Hackintool/)                                              |
 | ~~Intel Power Gadget~~ | 3.7.0*  🚨 | [software.intel.com](https://software.intel.com/content/www/us/en/develop/articles/intel-power-gadget.html) |
 | IORegistryExplorer     | 2.1       | [vulgo/IORegistryExplorer](https://github.com/vulgo/IORegistryExplorer)                                     |
 | MaciASL                | 1.6.2     | [acidanthera/MaciASL](https://github.com/acidanthera/MaciASL/)                                              |
-| OpenCore Configurator  | 2.73.0.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
+| OpenCore Configurator  | 2.75.0.0  | [mackie100projects](https://mackie100projects.altervista.org/download-opencore-configurator/)               |
 | USBMap                 | -         | [corpnewt/USBMap](https://github.com/corpnewt/USBMap)                                                       |
 
 *\*This version causes kernel panic after sleep on iMacPro1,1 SMBIOS*
