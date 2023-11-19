@@ -4,6 +4,7 @@
 
 ## [1.1.14] - 2023-11-19
 
+- chore: update macOS `v12.7.1`
 - chore: update open-core to `v0.9.6`
 - chore: update kexts and tools
 
