@@ -2,6 +2,12 @@
 
 ## macOS Monterey
 
+## [1.1.14] - 2023-11-19
+
+- chore: update macOS `v12.7.1`
+- chore: update open-core to `v0.9.6`
+- chore: update kexts and tools
+
 ## [1.1.13] - 2023-08-27
 
 - fix: set secure-boot to default
