@@ -2,6 +2,12 @@
 
 ## macOS Monterey
 
+## [1.1.15] - 2024-08-10
+
+- chore: update macOS `v12.7.6`
+- chore: update open-core to `v1.0.1`
+- feat: update gpu to asus rx6600 xt
+
 ## [1.1.14] - 2023-11-19
 
 - chore: update macOS `v12.7.1`
