@@ -254,6 +254,7 @@ The following bootflags are used:
 
 - [alcid=11](https://github.com/acidanthera/AppleALC/blob/master/Resources/ALC897/Info.plist) for ALC897 audio config
 - [darkwake=0](https://dortania.github.io/OpenCore-Post-Install/usb/misc/keyboard.html#method-3-configuring-darkwake) fixes `Wake by RTC/Maintenance`
+- [agdpmod=pikera](https://dortania.github.io/GPU-Buyers-Guide/modern-gpus/amd-gpu.html#navi-23-series) for display out with RX 6600 XT GPU
 
 #### ACPI Patches
 
