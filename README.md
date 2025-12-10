@@ -15,7 +15,7 @@ This Hackintosh was created with help of some motivating projects like [SchmockL
 <p align="left">
 <a href="https://www.buymeacoffee.com/rafaelmaeuer" target="_blank"><img src="./Images/buy-me-a-coffee.png" alt="Buy Me A Coffee" style="height: 50px;width: 250px;"></a>
 &nbsp;&nbsp;
-<a href="https://www.paypal.com/donate/?hosted_button_id=MAF7H5NNRMFAC" target="_blank"><img src="./Images/paypal.png" style="height: 50px;width: 140px;"></a>
+<a href="https://www.paypal.com/donate/?hosted_button_id=MAF7H5NNRMFAC" target="_blank"><img src="./Images/paypal-donate.png" style="height: 50px;width: 170px;"></a>
 &nbsp;&nbsp;
 <a href="https://github.com/sponsors/rafaelmaeuer" target="_blank"><img src="./Images/github-sponsor.png" style="height: 50px;width: 160px;"></a>
 </p>
